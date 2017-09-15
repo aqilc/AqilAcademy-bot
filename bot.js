@@ -5,7 +5,7 @@ const prefix = "."
 
 client.on('ready', () => {
   client.user.setStatus('online');
-  //client.user.setPresence({ game: { name: 'Being Created', type: 0} });
+  client.user.setPresence({ game: { name: 'Being Created', type: 0} });
   client.user.setUsername("Clyde")
   console.log(`Logged in as ${client.user.tag}!`);
 });
