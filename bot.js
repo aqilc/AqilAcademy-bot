@@ -1,6 +1,7 @@
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const r = require('rethinkdb');
 const prefix = "."
 
 client.on('ready', () => {
