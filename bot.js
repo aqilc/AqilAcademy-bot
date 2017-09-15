@@ -25,7 +25,7 @@ client.on('message', msg => {
         msg.channel.send(toSpeak)
       }
     }
-    if(said.content === prefix + "help") {
+    if(said === prefix + "help") {
       msg.reply("There's no commands for me to show. Coming soon™");
     }
 
