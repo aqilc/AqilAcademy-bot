@@ -1,7 +1,8 @@
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const r = require('rethinkdb');
+const Dash = require('rethinkdbdash')
+const r = new Dash()
 const prefix = "."
 
 client.on('ready', () => {
