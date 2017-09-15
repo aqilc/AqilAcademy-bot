@@ -8,5 +8,6 @@
   },
   "dependencies": {
     "discord.js": "11.1.0"
+    "rethinkdb": "2.3.3"
   }
 }
