@@ -37,6 +37,7 @@ client.on('message', msg => {
       client.channels.get("358352044094128128").send("\:mans_shoe: **Shadow™#8337 has been kicked with reason:** `this is a reason for kick` **.**")
       client.channels.get("358352044094128128").send("<:clydeWarn:358724078263336960> **Shadow™#8337 has been warned for** `spamming` **. This is Shadow™#8337's first warning.**")
       client.channels.get("358352044094128128").send("<:clydeWarnRed:358724931107684362> **Shadow™#8337 has been warned for** `spamming` **. This is Shadow™#8337's second warning.**\n<:clydeDemote:358682632294236160> **Shadow™#8337 has been demoted from Moderator due to number of warnings.**")
+      client.channels.get("358352044094128128").send("This is a demo. No actions have been executed.")
     }
 
 });
