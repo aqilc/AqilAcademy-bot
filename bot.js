@@ -28,6 +28,16 @@ client.on('message', msg => {
     if(said === prefix + "help") {
       msg.reply("There's no commands for me to show. Coming soon™");
     }
+    
+    if(said.startsWith(prefix + "activitylog-demo")) {
+      msg.reply("Take a look at <#358352044094128128>")
+      client.channels.get("358352044094128128").send("<:clydePromote:358682594080194560> **Shadow™#8337 has been promoted to Moderator!**")
+      client.channels.get("358352044094128128").send("<:clydeDemote:358682632294236160> **Shadow™#8337 has been demoted from Moderator due to inactivity.**")
+      client.channels.get("358352044094128128").send("<:Banhammer:358720547179200522> **Shadow™#8337 has been banned with reason:** `this is a reason for ban` **.**")
+      client.channels.get("358352044094128128").send("\:mans_shoe: **Shadow™#8337 has been kicked with reason:** `this is a reason for kick` **.**")
+      client.channels.get("358352044094128128").send("<:clydeWarn:358724078263336960> **Shadow™#8337 has been warned for** `spamming` **. This is Shadow™#8337's first warning.**")
+      client.channels.get("358352044094128128").send("<:clydeWarnRed:358724931107684362> **Shadow™#8337 has been warned for** `spamming` **. This is Shadow™#8337's second warning.**\n<:clydeDemote:358682632294236160> **Shadow™#8337 has been demoted from Moderator due to number of warnings.**")
+    }
 
 });
 
