@@ -25,7 +25,7 @@ var badWords = "fuck,shit,ass,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,
 
 
 client.on('message', msg => {
-
+if(msg.guild.id === "294115797326888961" || msg.guild.id === "323074775360602114") {
 if(msg.author.id === "188350841600606209") return;
 if (msg.content.startsWith(prefix + "eval")) {
   if(msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
@@ -652,7 +652,9 @@ if(said.startsWith(prefix + "warn")) {
       client.channels.get("358352044094128128").send("<:clydeWarn:358724078263336960> **Shadow™#8337 has been warned for** `spamming` **. This is Shadow™#8337's second warning.**\n<:clydeDemote:358682632294236160> **Shadow™#8337 has been demoted from Moderator due to number of warnings.**")
       client.channels.get("358352044094128128").send("This is a demo. No actions have been executed.")
     }*/
-
+} else {
+  msg.guild.leave();
+}
 });
 client.on('guildMemberAdd', member => {
       client.channels.get("294115797326888961").send("<@" + member.id + "> Welcome! <:blobwave:364865411344236545>")
