@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "discord.js": "11.1.0",
-    "rethinkdbdash": "^2.3.29"
+    "ms": "2.0.0"
   }
 }
