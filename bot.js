@@ -11,7 +11,12 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
+function clean(text) {
+  if (typeof(text) === "string")
+    return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+  else
+      return text;
+}
 var contains = function(a, b) {
   for(var i = 0; i < a.length; i++) {
     if (a.slice(i, i+b.length) === b){
