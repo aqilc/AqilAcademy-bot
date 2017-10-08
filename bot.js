@@ -92,7 +92,7 @@ if (msg.content.startsWith(prefix + "eval")) {
         return;
       }
     }
-    if(said.startsWith(prefix + "timeout")) {//Shadow Only
+    if(said.startsWith(prefix + "timeout")) {
       let member = msg.mentions.members.first();
       let modRole = msg.guild.roles.find("name", "Moderator")
       let cp = msg.guild.roles.find("name", "Complete Power")
@@ -247,7 +247,208 @@ console.log(reason)
       return;
     }
       }
+  
+  if(said.startsWith(prefix + "mute")) {
+      let member = msg.mentions.members.first();
+      let modRole = msg.guild.roles.find("name", "Moderator")
+      let cp = msg.guild.roles.find("name", "Complete Power")
+      if(msg.member.roles.has(modRole.id)) {
+            if(msg.member.roles.has(cp.id)) {
+              let member = msg.mentions.members.first()
+              if(!member) {
+                msg.delete(7000);
+                msg.reply("`ERROR`\nYou must specify a member to mute.").then(msg => msg.delete(7000));
+                return;
+              }
+              if(member.roles.has(cp.id)) {
+                msg.delete(7000);
+                msg.reply("`ERROR`\Members with Complete Power cannot be muted.").then(msg => msg.delete(7000));
+                return;
+              }
+              let muteRole = msg.guild.roles.find("name", "Muted")
+              if(!muteRole) {
+                msg.delete(7000);
+                msg.reply(":thinking: It seems that something went wrong. Your error has been reported to the Clyde admins.").then(msg => msg.delete(7000));
+                return;
+              }
+              if(member.roles.has(muteRole.id)) {
+                msg.delete(7000);
+                msg.reply("`ERROR`\nThis user is already muted.").then(msg => msg.delete(7000));
+                return;
+              }
+              let params = msg.content.split(" ").slice(1);
+              let reason = msg.content.split(/\s+/g).slice(3).join(" ");
 
+              let time = params[1];
+
+  console.log(reason)
+
+              if(!time) {
+                msg.delete(7000);
+                msg.reply("`ERROR`\nYou must specify a duration for the mute.").then(msg => msg.delete(7000));
+                return;
+              }
+
+              if(!reason[0]) {
+                msg.delete(7000);
+                msg.reply("`ERROR`\nYou must specify a reason for the mute.").then(msg => msg.delete(7000));
+                return;
+              }
+              member.addRole(muteRole.id, reason + " - Responsible User: " + msg.author.username + "#" + msg.author.discriminator)
+              msg.delete();
+              msg.channel.send("<:blobpolice:364194401783775252> " + member.user.username + "#" + member.user.discriminator + " has been muted for " + ms(ms(time), {long: true}) + " with reason `" + reason + "`.")
+              client.channels.get("358352044094128128").send({embed: {
+              color: 16753920,
+              fields: [{
+                  name: "<:blobpolice:364194401783775252> Member Muted",
+                  value: "Member: " + member.user.username + "#" + member.user.discriminator + "\nMember ID: " + member.user.id + "\nModerator: " + msg.author.username + "#" + msg.author.discriminator + "\nReason: " + reason + "\nTime: " + ms(ms(time), {long: true})
+                }
+              ],
+
+            }
+          })
+            member.send("<:blobpolice:364194401783775252> You were muted on AqilAcademy with the reason `" + reason + "`. This will last for " + ms(ms(time), {long: true}) + ". While you're waiting, you should take a look over <#325380886394568704>.")
+              setTimeout(function() {
+                if(!member.roles.has(muteRole.id)) return;
+                member.removeRole(muteRole.id, "Mute Ended")
+                client.channels.get("358352044094128128").send({embed: {
+                color: 16753920,
+                fields: [{
+                    name: "<:blobpolice:364194401783775252> Member Unmuted",
+                    value: "Member: " + member.user.username + "#" + member.user.discriminator + "\nMember ID: " + member.user.id + "\nModerator: Clyde#5067" + "\nReason: Automatic End of Mute"
+                  }
+                ],
+
+              }
+            })
+
+              }, ms(time))
+            } else {
+
+            llet member = msg.mentions.members.first()
+              if(!member) {
+                msg.delete(7000);
+                msg.reply("`ERROR`\nYou must specify a member to mute.").then(msg => msg.delete(7000));
+                return;
+              }
+              if(member.roles.has(cp.id)) {
+                msg.delete(7000);
+                msg.reply("`ERROR`\Members with Complete Power cannot be muted.").then(msg => msg.delete(7000));
+                return;
+              }
+              let muteRole = msg.guild.roles.find("name", "Muted")
+              if(!muteRole) {
+                msg.delete(7000);
+                msg.reply(":thinking: It seems that something went wrong. Your error has been reported to the Clyde admins.").then(msg => msg.delete(7000));
+                return;
+              }
+              if(member.roles.has(muteRole.id)) {
+                msg.delete(7000);
+                msg.reply("`ERROR`\nThis user is already muted.").then(msg => msg.delete(7000));
+                return;
+              }
+              let params = msg.content.split(" ").slice(1);
+              let reason = msg.content.split(/\s+/g).slice(3).join(" ");
+
+              let time = params[1];
+
+  console.log(reason)
+
+              if(!time) {
+                msg.delete(7000);
+                msg.reply("`ERROR`\nYou must specify a duration for the mute.").then(msg => msg.delete(7000));
+                return;
+              }
+
+              if(!reason[0]) {
+                msg.delete(7000);
+                msg.reply("`ERROR`\nYou must specify a reason for the mute.").then(msg => msg.delete(7000));
+                return;
+              }
+              member.addRole(muteRole.id, reason + " - Responsible User: " + msg.author.username + "#" + msg.author.discriminator)
+              msg.delete();
+              msg.channel.send("<:blobpolice:364194401783775252> " + member.user.username + "#" + member.user.discriminator + " has been muted for " + ms(ms(time), {long: true}) + " with reason `" + reason + "`.")
+              client.channels.get("358352044094128128").send({embed: {
+              color: 16753920,
+              fields: [{
+                  name: "<:blobpolice:364194401783775252> Member Muted",
+                  value: "Member: " + member.user.username + "#" + member.user.discriminator + "\nMember ID: " + member.user.id + "\nModerator: " + msg.author.username + "#" + msg.author.discriminator + "\nReason: " + reason + "\nTime: " + ms(ms(time), {long: true})
+                }
+              ],
+
+            }
+          })
+            member.send("<:blobpolice:364194401783775252> You were muted on AqilAcademy with the reason `" + reason + "`. This will last for " + ms(ms(time), {long: true}) + ". While you're waiting, you should take a look over <#325380886394568704>.")
+              setTimeout(function() {
+                if(!member.roles.has(muteRole.id)) return;
+                member.removeRole(muteRole.id, "Mute Ended")
+                client.channels.get("358352044094128128").send({embed: {
+                color: 16753920,
+                fields: [{
+                    name: "<:blobpolice:364194401783775252> Member Unmuted",
+                    value: "Member: " + member.user.username + "#" + member.user.discriminator + "\nMember ID: " + member.user.id + "\nModerator: Clyde#5067" + "\nReason: Automatic End of Mute"
+                  }
+                ],
+
+              }
+            })
+
+              }, ms(time))
+
+
+
+}
+    } else {
+      msg.reply("`ERROR`\nYou do not have the `Moderator` role.")
+      return;
+    }
+      }
+      if(said.startsWith(prefix + "unmute")) {
+        let modRole = msg.guild.roles.find("name", "Moderator")
+        if (msg.member.roles.has(modRole.id)) {
+          let member = msg.mentions.members.first()
+          if(!member) {
+            msg.delete(7000);
+            msg.reply("`ERROR`\nYou must specify a member to unmute.").then(msg => msg.delete(7000));
+            return;
+          }
+          let muteRole = msg.guild.roles.find("name", "Muted")
+          if(!muteRole) {
+            msg.delete(7000);
+            msg.reply("`ERROR`\nIncorrect Mute Role Configuration").then(msg => msg.delete(7000));
+            return;
+          }
+          if(!member.roles.has(muteRole.id)) {
+            msg.delete(7000);
+            msg.reply("`ERROR`\nThis user is not currently muted.").then(msg => msg.delete(7000));
+            return;
+          }
+          let reason = msg.content.split(/\s+/g).slice(3).join(" ");
+
+
+          if(!reason) {
+            msg.delete(7000);
+            msg.reply("`ERROR`\nYou must specify a reason.").then(msg => msg.delete(7000))
+          }
+          member.removeRole(muteRole.id)
+          msg.delete();
+          msg.channel.send("<:clydeApprove:366662545504862211> " + member.user.username + "#" + member.user.discriminator + " has been umuted with reason `" + reason + "`.")
+          client.channels.get("358352044094128128").send({embed: {
+                color: 16753920,
+                fields: [{
+                    name: "<:blobpolice:364194401783775252> Member Unmuted",
+                    value: "Member: " + member.user.username + "#" + member.user.discriminator + "\nMember ID: " + member.user.id + "\nModerator: Clyde#5067" + "\nReason: Automatic End of Mute"
+                  }
+                ],
+
+              }
+            })
+        } else {
+          msg.delete(7000);
+          msg.reply("`ERROR` You do not have the `Moderator` role.").then(msg => msg.delete(7000));
+        }
+      }
+    }
 
 
     if(said.startsWith(prefix + "kick")) {
