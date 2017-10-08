@@ -565,6 +565,7 @@ console.log(reason)
           if(!reason) {
             msg.delete(7000);
             msg.reply("`ERROR`\nYou must specify a reason.").then(msg => msg.delete(7000))
+            return;
           }
           member.removeRole(muteRole.id)
           msg.delete();
@@ -609,6 +610,7 @@ console.log(reason)
           if(!reason) {
             msg.delete(7000);
             msg.reply("`ERROR`\nYou must specify a reason.").then(msg => msg.delete(7000))
+            return;
           }
           member.removeRole(muteRole.id)
           msg.delete();
@@ -652,6 +654,7 @@ console.log(reason)
           if(!reason) {
             msg.delete(7000);
             msg.reply("`ERROR`\nYou must specify a reason.").then(msg => msg.delete(7000))
+            return;
           }
           member.removeRole(muteRole.id)
           msg.delete();
