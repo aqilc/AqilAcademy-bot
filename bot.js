@@ -464,7 +464,7 @@ console.log(reason)
                 msg.reply("`ERROR`\nYou must specify a member to mute.").then(msg => msg.delete(7000));
                 return;
               }
-              if(member.roles.has(cp.id)) {
+              if(member.roles.has(modRole.id)) {
                 msg.delete(7000);
                 msg.reply("`ERROR`\Members with Complete Power cannot be muted.").then(msg => msg.delete(7000));
                 return;
