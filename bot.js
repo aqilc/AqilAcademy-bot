@@ -395,7 +395,7 @@ console.log(reason)
               }
               if(member.roles.has(cp.id)) {
                 msg.delete(7000);
-                msg.reply("`ERROR`\Members with Complete Power cannot be muted.").then(msg => msg.delete(7000));
+                msg.reply("`ERROR`\nMembers with Complete Power cannot be muted.").then(msg => msg.delete(7000));
                 return;
               }
               let muteRole = msg.guild.roles.find("name", "Muted")
@@ -466,7 +466,7 @@ console.log(reason)
               }
               if(member.roles.has(modRole.id)) {
                 msg.delete(7000);
-                msg.reply("`ERROR`\Members with Complete Power cannot be muted.").then(msg => msg.delete(7000));
+                msg.reply("`ERROR`\nMembers with the Moderator role cannot be muted.").then(msg => msg.delete(7000));
                 return;
               }
               let muteRole = msg.guild.roles.find("name", "Muted")
