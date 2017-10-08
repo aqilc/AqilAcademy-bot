@@ -496,6 +496,9 @@ if(said.startsWith(prefix + "warn")) {
       return;
   }
 }
+    if(msg.content === prefix + "uptime") {
+      msg.reply("I have been online for " + ms(client.uptime, {long: true}) + ".")
+    }
     if(said.startsWith(prefix + "startelection")) {
         if(msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
       let params = msg.content.split(" ").slice(1);
@@ -658,6 +661,7 @@ if(said.startsWith(prefix + "warn")) {
       client.channels.get("358352044094128128").send("This is a demo. No actions have been executed.")
     }*/
 } else {
+  msg.channel.send("This bot is only designed for the AqilAcademy server, so it can't be used in any other server. If you want to come to AqilAcademy, here's a link: ")
   msg.guild.leave();
 }
 });
