@@ -580,7 +580,7 @@ console.log(reason)
               }
             })
           }
-          if(msg.member.roles.has(cp.id)) {
+          else if(msg.member.roles.has(cp.id)) {
             let member = msg.mentions.members.first()
           if(!member) {
             msg.delete(7000);
