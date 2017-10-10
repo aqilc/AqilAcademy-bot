@@ -71,18 +71,21 @@ if (msg.content.startsWith(prefix + "eval")) {
       }
     }*/
     if(said.startsWith(prefix + "tag")) {
+      var say;
       var toTag = msg.content.slice(prefix.length+4, msg.length);
    
         switch(toTag) {
     case rolerewards:
-        msg.channel.send("**WHAT DO I GET FOR CHATTING HERE**\nTake a look at the role rewards! https://shadowka.gitbooks.io/clyde/content/#rolerewards")
+        say = "**WHAT DO I GET FOR CHATTING HERE**\nTake a look at the role rewards! https://shadowka.gitbooks.io/clyde/content/#rolerewards"
         break;
     case clydeadmins:
-        msg.channel.send("The Clyde Admins are Aqil#4788 and Shadow™#8337.")
+        say = "The Clyde Admins are Aqil#4788 and Shadow™#8337."
         break;
     default:
-        msg.channel.send("`ERROR`\nTag unavailable.")
+        say = "`ERROR`\nTag unavailable."
+            
 }
+      msg.channel.send(say)
     }
     if(msg.content === prefix + "suggest party-instructions") {
       msg.delete()
