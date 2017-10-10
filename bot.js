@@ -25,7 +25,7 @@ var contains = function(a, b) {
   }
 };
 
-var badWords = "fuck,shit,ass,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,asshole,tit,vagina,pussy".split(",");
+var badWords = " fuck , shit , ass , yoy , cock , dick , sex , porn , fucker , mother fucker , bitch , asshole , tit , vagina , pussy ".split(",");
 
 
 
@@ -52,7 +52,7 @@ if (msg.content.startsWith(prefix + "eval")) {
   if(msg.author.bot && !client.user) return;
 
 
-    /*for(var i = 0; i < badWords.length; i++) {
+    for(var i = 0; i < badWords.length; i++) {
       if (contains(msg.content.toLowerCase(), badWords[i].toLowerCase())) {
         msg.delete();
         msg.reply("Please control your language! <:stop:364887308782272512>");
@@ -69,7 +69,7 @@ if (msg.content.startsWith(prefix + "eval")) {
       }
     })
       }
-    }*/
+    }
 
     if(msg.content === prefix + "suggest party-instructions") {
       msg.delete()
@@ -1043,7 +1043,7 @@ if(said.startsWith(prefix + "warn")) {
     }
     }
     if(said === prefix + "help") {
-      msg.reply("**Clyde Help**\n`.run` - Enters you in the election. ```Usage: .run {Party} | {Slogan} | {More Information}```\n\n**Clyde Admin Commands**\n`.startelection` - Starts an election. ```Usage: .startelection {Time}```\n`.dsq` - Disqualifies a user from the election. ```Usage: .dsq {@user}```");
+      msg.reply("**Looking for info about Clyde? Want to know all of the commands?**\n\nHead on over to https://shadowka.gitbooks.io/clyde/content/ and you'll see info about all the different functions of Clyde.");
     }
     if(said.startsWith(prefix + "suggestparty")) {
       msg.reply("Party Suggestions are not being currently accepted.")
