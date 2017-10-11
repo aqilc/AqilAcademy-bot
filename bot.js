@@ -70,7 +70,7 @@ if (msg.content.startsWith(prefix + "eval")) {
     })
       }
     }*/
-    if(said.startsWith(prefix + "tag")) {
+ /*   if(said.startsWith(prefix + "tag")) {
       var say;
       var toTag = msg.content.slice(prefix.length+4, msg.length);
    
@@ -86,7 +86,7 @@ if (msg.content.startsWith(prefix + "eval")) {
             
 }
       msg.channel.send(say)
-    }
+    }*/
     if(msg.content === prefix + "suggest party-instructions") {
       msg.delete()
       msg.channel.send(":scream: _A new channel just appeared for me! What is it???_\nThis is the place to submit your suggestions for parties in the next AqilAcademy election.\n\n**Okay, I just had this great idea for a party! How do I submit it?**\nIt's simple! Just use the `.suggestparty` command anywhere on this server. It will appear here and can be voted on by other members.\n```Example: .suggestparty The Party of ™Ness```\n**I see some great suggestions here, how do I support them?** OR **I don't like this suggestion, how do I downvote it?**\nReact with either <:upvote:361166616081203200> or <:downvote:361166591943114752>.")
