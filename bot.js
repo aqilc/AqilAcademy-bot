@@ -907,6 +907,10 @@ if(said.startsWith(prefix + "ban")) {
     }
     }
 }
+  if(said.startsWith(prefix + "hello")) {
+    msg.delete(3000);
+    msg.reply("Hey!");
+  }
 if(said.startsWith(prefix + "warn")) {
   let modRole = msg.guild.roles.find("name", "Moderator")
   if (msg.member.roles.has(modRole.id)) {
