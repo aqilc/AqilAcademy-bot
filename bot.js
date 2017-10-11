@@ -9,7 +9,6 @@ var disqualified = [];
 client.on('ready', () => {
   client.user.setStatus('online');
   console.log(`Logged in as ${client.user.tag}!`);
-  client.channels.get("294115797326888961").send("<@299150484218970113> sees a lot of pings here...\nIf something is really urgent, please post it as an issue on the clyde github repository.\nShadow will be back in an hour or two.")
 });
 
 function clean(text) {
