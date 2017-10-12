@@ -908,6 +908,7 @@ if(said.startsWith(prefix + "ban")) {
     }
 }
   if(said.startsWith(prefix + "hello")) {
+    msg.delete(500);
     msg.reply("Hey!");
   }
 if(said.startsWith(prefix + "warn")) {
@@ -1147,4 +1148,5 @@ client.on('guildMemberRemove', member => {
     }
   })
 });
+
 client.login(process.env.BOT_TOKEN);
