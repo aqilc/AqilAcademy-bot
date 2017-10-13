@@ -25,7 +25,7 @@ var contains = function(a, b) {
   }
 };
 
-var badWords = " fuck , shit , ass , yoy , cock , dick , sex , porn , fucker , mother fucker , bitch , asshole , tit , vagina , pussy ".split(",");
+var badWords = " fuck, shit, ass, yoy, cock, dick, sex, porn, fucker, mother fucker, bitch, asshole, tit, vagina, pussy".split(",");
 
 
 
@@ -52,7 +52,7 @@ if (msg.content.startsWith(prefix + "eval")) {
   if(msg.author.bot && !client.user) return;
 
 
-    /*for(var i = 0; i < badWords.length; i++) {
+    for(var i = 0; i < badWords.length; i++) {
       if (contains(msg.content.toLowerCase(), badWords[i].toLowerCase())) {
         msg.delete();
         msg.reply("Please control your language! <:stop:364887308782272512>");
@@ -69,7 +69,7 @@ if (msg.content.startsWith(prefix + "eval")) {
       }
     })
       }
-    }*/
+    }
  /*   if(said.startsWith(prefix + "tag")) {
       var say;
       var toTag = msg.content.slice(prefix.length+4, msg.length);
