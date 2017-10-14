@@ -25,68 +25,63 @@ var contains = function(a, b) {
   }
 };
 
-var badWords = " fuck , shit , ass , yoy , cock , dick , sex , porn , fucker , mother fucker , bitch , asshole , tit , vagina , pussy ".split(",");
-
-
+//All the bad words
+var badWords = "fuck, shit, ass, cock, dick, sex, porn, fucker, mother fucker, bitch, asshole, tit, vagina, pussy, Hell, Fuck, FUCK, Shit, Asshole, Ass, FU, wtf, WTF, Wtf".split(", ");
 
 client.on('message', msg => {
+  if(msg.author.id === "188350841600606209") return;
+  if (msg.content.startsWith(prefix + "eval")) {
+    if(msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
+    let args = msg.content.split(" ").slice(1);
 
-if(msg.author.id === "188350841600606209") return;
-if (msg.content.startsWith(prefix + "eval")) {
-  if(msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
-  let args = msg.content.split(" ").slice(1);
+    try {
+      const code = args.join(" ");
+      let evaled = eval(code);
 
-  try {
-    const code = args.join(" ");
-    let evaled = eval(code);
+      if (typeof evaled !== "string")
+        evaled = require("util").inspect(evaled);
 
-    if (typeof evaled !== "string")
-      evaled = require("util").inspect(evaled);
-
-    msg.channel.send(clean(evaled), {code:"xl"});
-  } catch (err) {
-    msg.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+      msg.channel.send(clean(evaled), {code:"xl"});
+    } catch (err) {
+      msg.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+    }
   }
-}
-  var said = msg.content.toLowerCase();//declare said}
-  if(msg.author.bot && !client.user) return;
+    var said = msg.content.toLowerCase();//declare said}
+    if(msg.author.bot && !client.user) return;
 
-
-    /*for(var i = 0; i < badWords.length; i++) {
-      if (contains(msg.content.toLowerCase(), badWords[i].toLowerCase())) {
-        msg.delete();
-        msg.reply("Please control your language! <:stop:364887308782272512>");
-        let member = msg.author;
-        member.send("**You've been warned in AqilAcademy:**\nPlease do not use words that go against the language filter. Thank you!");
-        client.channels.get("358352044094128128").send({embed: {
-        color: 16753920,
-        fields: [{
-            name: "<:blobpolice:364194401783775252> Member Warned",
-            value: "Member: " + msg.author.username + "#" + msg.author.discriminator + "\nMember ID: " + msg.author.id + "\nModerator: Clyde#5067" + "\nWarning: Please do not use words that go against the language filter. Thank you!"
-          }
-        ],
-
-      }
-    })
-      }
-    }*/
- /*   if(said.startsWith(prefix + "tag")) {
-      var say;
-      var toTag = msg.content.slice(prefix.length+4, msg.length);
-   
-        switch(toTag) {
-    case rolerewards:
-        say = "**WHAT DO I GET FOR CHATTING HERE**\nTake a look at the role rewards! https://shadowka.gitbooks.io/clyde/content/#rolerewards"
-        break;
-    case clydeadmins:
-        say = "The Clyde Admins are Aqil#4788 and Shadow™#8337."
-        break;
-    default:
-        say = "`ERROR`\nTag unavailable."
-            
-}
-      msg.channel.send(say)
-    }*/
+  for(var i = 0; i < badWords.length; i++) {
+    if (contains(msg.content.toLowerCase(), badWords[i].toLowerCase())) {
+      msg.delete();
+      msg.reply("Please control your language! <:stop:364887308782272512>");
+      let member = msg.author;
+      member.send("**You've been warned in AqilAcademy:**\nPlease do not use words that go against the language filter. Thank you!");
+      client.channels.get("358352044094128128").send({
+        embed: {
+          color: 16753920,
+          fields: [{
+              name: "<:blobpolice:364194401783775252> Member Warned",
+              value: "Member: " + msg.author.username + "#" + msg.author.discriminator + "\nMember ID: " + msg.author.id + "\nModerator: Clyde#5067" + "\nWarning: Please do not use words that go against the language filter. Thank you!"
+            }
+          ],
+        }
+      })
+    }
+  }
+  if(said.startsWith(prefix + "tag")) {
+    var say;
+    var toTag = msg.content.slice(prefix.length+4, msg.length);
+    switch(toTag) {
+      case rolerewards:
+          say = "**WHAT DO I GET FOR CHATTING HERE**\nTake a look at the role rewards! https://shadowka.gitbooks.io/clyde/content/#rolerewards"
+          break;
+      case clydeadmins:
+          say = "The Clyde Admins are Aqil#4788 and Shadow™#8337."
+          break;
+      default:
+          say = "`ERROR`\nTag unavailable."
+    }
+    msg.channel.send(say)
+  }
     if(msg.content === prefix + "suggest party-instructions") {
       msg.delete()
       msg.channel.send(":scream: _A new channel just appeared for me! What is it???_\nThis is the place to submit your suggestions for parties in the next AqilAcademy election.\n\n**Okay, I just had this great idea for a party! How do I submit it?**\nIt's simple! Just use the `.suggestparty` command anywhere on this server. It will appear here and can be voted on by other members.\n```Example: .suggestparty The Party of ™Ness```\n**I see some great suggestions here, how do I support them?** OR **I don't like this suggestion, how do I downvote it?**\nReact with either <:upvote:361166616081203200> or <:downvote:361166591943114752>.")
