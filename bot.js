@@ -25,7 +25,7 @@ var contains = function(a, b) {
   }
 };
 
-var badWords = " fuck, shit, ass, yoy, cock, dick, sex, porn, fucker, mother fucker, bitch, asshole, tit, vagina, pussy".split(",");
+var badWords = "fuck, shit, ass, cock, dick, sex, porn, fucker, mother fucker, bitch, asshole, tit, vagina, pussy, Fuck, FUCK, Shit, Ass, Hell".split(", ");
 
 
 
