@@ -24,7 +24,7 @@ var contains = function(a, b) {
     }
   }
 };
-
+var rbRole = ["<@&364725306478821388>"];
 var badWords = " fuck, shit, ass, yoy, cock, dick, sex, porn, fucker, mother fucker, bitch, asshole, tit, vagina, pussy".split(",");
 
 
@@ -51,7 +51,11 @@ if (msg.content.startsWith(prefix + "eval")) {
   var said = msg.content.toLowerCase();//declare said}
   if(msg.author.bot && !client.user) return;
 
-
+    for(var i = 0; i < rbRole.length; i++) {
+      if (contains(msg.content.toLowerCase(), rbRole[i].toLowerCase())) {
+        msg.member.ban("PINGED THE RED BLOBS 😡")
+      }
+    }
     for(var i = 0; i < badWords.length; i++) {
       if (contains(msg.content.toLowerCase(), badWords[i].toLowerCase())) {
         msg.delete();
