@@ -53,6 +53,17 @@ if (msg.content.startsWith(prefix + "eval")) {
 
     for(var i = 0; i < rbRole.length; i++) {
       if (contains(msg.content.toLowerCase(), rbRole[i].toLowerCase())) {
+        msg.channel.send("<:blobhammer:364493777882185728> " + msg.author.tag + " has been banned for `PINGED THE RED BLOBS 😡`.")
+          client.channels.get("358352044094128128").send({embed: {
+          color: 16711680,
+          fields: [{
+              name: "<:blobhammer:364493777882185728> Member Banned",
+              value: "Member: " + msg.author.tag + "\nMember ID: " + msg.author.id + "\nModerator: Red Blobs Everywhere\nReason: PINGED THE RED BLOBS 😡"
+            }
+          ],
+
+        }
+      })
         msg.member.ban("PINGED THE RED BLOBS 😡")
       }
     }
