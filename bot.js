@@ -1112,6 +1112,9 @@ if(said.startsWith(prefix + "warn")) {
       return;
     }
     }
+  if(msg.content === prefix + "listemoji") {
+    msg.channel.send(msg.guild.emojis.map(r => r.toString()).join("  "));
+  }
   /*  if(said.startsWith(prefix + "activitylog-demo")) {
       msg.reply("Take a look at <#358352044094128128>")
       client.channels.get("358352044094128128").send("<:clydePromote:358682594080194560> **Shadow™#8337 has been promoted to Moderator!**")
