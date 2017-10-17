@@ -32,6 +32,10 @@ var badWords = " fuck, shit, ass, yoy, cock, dick, sex, porn, fucker, mother fuc
 client.on('message', msg => {
 
 if(msg.author.id === "188350841600606209") return;
+if (msg.content === prefix + "offtopic") {
+  msg.delete()
+  msg.channel.send("Woah, that's getting off topic! Please move to <#325046144495255552> or <#294115797326888961>!")
+}
 if (msg.content.startsWith(prefix + "eval")) {
   if(msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
   let args = msg.content.split(" ").slice(1);
