@@ -25,7 +25,7 @@ var contains = function(a, b) {
   }
 };
 var rbRole = ["<@&364725306478821388>"];
-var badWords = " fuck, shit, ass, yoy, cock, dick, sex, porn, fucker, mother fucker, bitch, asshole, tit, vagina, pussy".split(",");
+var badWords = "fuck, shit, ass, cock, dick, sex, porn, fucker, mother fucker, bitch, asshole, tit, vagina, pussy, Hell, HELL, FUCK, Fuck, Fucker, Mother Fucker".split(", ");
 
 
 
