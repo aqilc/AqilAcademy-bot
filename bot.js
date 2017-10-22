@@ -34,19 +34,19 @@ client.on('message', msg => {
     if (msg.author.id === "188350841600606209") return;
 
     if(msg.content.startsWith(prefix + "tag")) {
-        let saidTag = said.split(" ").slice(1);
+        let saidTag = said.slice(prefix.length + 4, msg.length);
         switch(saidTag) {
             case "offtopic":
                 msg.delete()
                 msg.channel.send("Woah, that's getting off topic! Please move to <#325046144495255552>!")
-        
+
             break;
             case "clydeadmins":
-                msg.channel.send("The Clyde Admins are Shadow™#8337 and Aqil#4048")
+                msg.channel.send("The Clyde Admins are Shadow™#8337 and Aqil#4788. ")
             break;
-            default: 
+            default:
                 msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added at ")
-                
+
         }
     }
         
