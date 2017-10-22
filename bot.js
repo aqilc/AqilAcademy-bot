@@ -1141,6 +1141,10 @@ var said = msg.content.toLowerCase(); //declare said
       }*/
 
 });
+client.on('error', error => {
+    msg.reply("Sorry! An unexpected error has occured. It has been reported to the clyde admins. For now, here's a consolation dog picture. https://random.dog")
+    client.channels.get("371766267029356565").send("`ERROR`\n```" + error + "```")
+});
 client.on('guildMemberAdd', member => {
     client.channels.get("294115797326888961").send("<@" + member.id + "> Welcome! <:blobwave:364865411344236545>")
     member.send({
