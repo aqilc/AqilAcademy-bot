@@ -45,7 +45,7 @@ var said = msg.content.toLowerCase(); //declare said
                 msg.channel.send("The Clyde Admins are Shadow™#8337 and Aqil#4788. ")
             break;
             default:
-                msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added at ")
+                msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added by posting a comment at https://github.com/ShadowKA/AqilAcademy-bot/issues/6 or contacting Shadow.")
 
         }
     }
