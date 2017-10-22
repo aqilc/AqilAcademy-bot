@@ -32,7 +32,7 @@ var badWords = " fuck, shit, ass, yoy, cock, dick, sex, porn, fucker, mother fuc
 client.on('message', msg => {
 
     if (msg.author.id === "188350841600606209") return;
-
+var said = msg.content.toLowerCase(); //declare said
     if(msg.content.startsWith(prefix + "tag")) {
         let saidTag = said.slice(prefix.length + 4, msg.length);
         switch(saidTag) {
@@ -66,7 +66,7 @@ client.on('message', msg => {
             msg.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
         }
     }
-    var said = msg.content.toLowerCase(); //declare said}
+    
     if (msg.author.bot && !client.user) return;
 
     for (var i = 0; i < rbRole.length; i++) {
