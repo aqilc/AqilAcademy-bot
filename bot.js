@@ -43,6 +43,21 @@ var said = msg.content.toLowerCase(); //declare said
             case "clydeadmins":
                 msg.channel.send("The Clyde Admins are Shadow™#8337 and Aqil#4788. ")
             break;
+            case "banme":
+                if(!msg.author.id === "325070981158928393") return msg.reply("`ERROR`\nYou are not <@325070981158928393>.")
+                msg.channel.send("<:blobhammer:364493777882185728> " + msg.author.tag + " has been banned for `Wanted to be banned with a command`.")
+            client.channels.get("358352044094128128").send({
+                embed: {
+                    color: 16711680,
+                    fields: [{
+                        name: "<:blobhammer:364493777882185728> Member Banned",
+                        value: "Member: " + msg.author.tag + "\nMember ID: " + msg.author.id + "\nModerator: " + msg.author.tag + "\nReason: Wanted to be banned with a command"
+                    }],
+
+                }
+            })
+            msg.member.ban("Wanted to be banned with a command")
+            break;
             default:
                 msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added by posting a comment at https://github.com/ShadowKA/AqilAcademy-bot/issues/6 or contacting Shadow.")
 
