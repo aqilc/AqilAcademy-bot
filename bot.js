@@ -54,7 +54,10 @@ var said = msg.content.toLowerCase(); //declare said
                 msg.channel.send("**<@299150484218970113> Election Data to Input After Bot Restart**\n\nRunning: " + running + "\nDisqualified: " + disqualified)
             }
             msg.reply("Bot restarting...")
-            process.exit()
+            setTimeout(function() {
+                process.exit()
+            }, 5000)
+            
         } else {
             msg.delete(7000)
             msg.reply("`ERROR`\nIncorrect Permissions").then(msg => msg.delete(7000))
