@@ -54,6 +54,7 @@ var said = msg.content.toLowerCase(); //declare said
                 msg.channel.send("**<@299150484218970113> Election Data to Input After Bot Restart**\n\nRunning: " + running + "\nDisqualified: " + disqualified)
             }
             msg.reply("Bot restarting...")
+            client.user.setStatus("dnd")
             setTimeout(function() {
                 process.exit()
             }, 5000)
