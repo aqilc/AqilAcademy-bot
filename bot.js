@@ -48,7 +48,18 @@ var said = msg.content.toLowerCase(); //declare said
 
         }
     }
-        
+    if (msg.content === prefix + "restart") {
+        if (msg.author.id === "299150484218970113" || msg.author.id === "316313763513106434") {
+            if(electionOn === true) {
+                msg.channel.send("**<@299150484218970113> Election Data to Input After Bot Restart**\n\nRunning: " + running + "\nDisqualified: " + disqualified)
+            }
+            msg.reply("Bot restarting...")
+            process.exit()
+        } else {
+            msg.delete(7000)
+            msg.reply("`ERROR`\nIncorrect Permissions").then(msg => msg.delete(7000))
+        }
+    }
     if (msg.content.startsWith(prefix + "eval")) {
         if (msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
         let args = msg.content.split(" ").slice(1);
