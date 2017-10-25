@@ -1053,7 +1053,7 @@ var said = msg.content.toLowerCase(); //declare said
             //ms(ms(time), {long: true})
             setTimeout(function() {
                 electionOn = false;
-
+                client.channels.get("372339686443843584").send("**The Election Has Ended!**")
             }, ms(time))
         }
     }
@@ -1169,6 +1169,31 @@ var said = msg.content.toLowerCase(); //declare said
             msg.delete()
             return;
         }
+    }
+    if (msg.content.startsWith(prefix + "electionreset")) {
+        let setting = said.slice(prefix.length + 14, msg.length);
+        switch(setting){
+            case "dsq":
+                disqualified = [];
+                msg.reply("<:clydeApprove:366662545504862211> I've reset the list of disqualified users.")
+            break;
+            case "running":
+                running = [];
+                msg.reply("<:clydeApprove:366662545504862211> I've reset the list of running users.")
+            break;
+            case "stats":
+                running = [];
+                disqualified = [];
+                msg.reply("<:clydeApprove:366662545504862211> I've reset the list of running and disqualified users.")
+            break;
+            default:
+                electionOn = false;
+                running = [];
+                disqualified = [];
+                msg.reply("<:clydeApprove:366662545504862211> I've reset all election stats, there is now no election in progress.")
+        }
+        }
+        
     }
     if (msg.content === prefix + "listemoji") {
         msg.channel.send(msg.guild.emojis.map(r => r.toString()).join("  "));
