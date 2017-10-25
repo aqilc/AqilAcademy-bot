@@ -83,6 +83,10 @@ var said = msg.content.toLowerCase(); //declare said
             msg.reply("`ERROR`\nIncorrect Permissions").then(msg => msg.delete(7000))
         }
     }
+    if (msg.content.startsWith(prefix + "requestemoji")) {
+        let requestedEmoji = msg.attachments.first()
+        msg.reply()
+    }
     if (msg.content.startsWith(prefix + "eval")) {
         if (msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
         let args = msg.content.split(" ").slice(1);
@@ -1018,8 +1022,8 @@ var said = msg.content.toLowerCase(); //declare said
             console.log(time)
             if (!time) return msg.reply("Please specify a duration for the election.")
             electionOn = true;
-            client.channels.get("361157929988128768").send("@everyone")
-            client.channels.get("361157929988128768").send({
+            client.channels.get("372339686443843584").send("@everyone")
+            client.channels.get("372339686443843584").send({
                 embed: {
                     color: 7506394,
                     author: {
@@ -1081,7 +1085,7 @@ var said = msg.content.toLowerCase(); //declare said
 
 
 
-        client.channels.get("361157929988128768").send({
+        client.channels.get("372339686443843584").send({
             embed: {
                 color: 7506394,
                 author: {
@@ -1128,10 +1132,10 @@ var said = msg.content.toLowerCase(); //declare said
         msg.reply("**Looking for info about Clyde? Want to know all of the commands?**\n\nHead on over to https://shadowka.gitbooks.io/clyde/content/ and you'll see info about all the different functions of Clyde.");
     }
     if (said.startsWith(prefix + "suggestparty")) {
-        msg.reply("Party Suggestions are not being currently accepted.")
-        /*var suggestion = msg.content.slice(prefix.length+13, msg.length);
+        //msg.reply("Party Suggestions are not being currently accepted.")
+      var suggestion = msg.content.slice(prefix.length+13, msg.length);
       msg.reply(":ok_hand: Your suggestion `" + suggestion + "` has been submitted! It can now be found in <#361167250280939520>.")
-      client.channels.get("361167250280939520").send({embed: {
+      client.channels.get("372339752290091008").send({embed: {
       color: 7506394,
       author: {
         name: "Suggestion from " + msg.author.username,
@@ -1143,13 +1147,20 @@ var said = msg.content.toLowerCase(); //declare said
         }
       ],
     }
-  })*/
+  })
     }
-    /*if(msg.channel.id === "361167250280939520") {
-      if(msg.author.id !== client.user.id) return msg.delete();
-      msg.react(":upvote:361166616081203200").then(msg.react(":downvote:361166591943114752"))
-    }*/
-    if (msg.channel.id === "361157929988128768") {
+    if(msg.channel.id === "372339752290091008") {
+      if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
+
+        } else if (msg.author.id === client.user.id) {
+            msg.react(":upvote:361166616081203200").then(msg.react(":downvote:361166591943114752"))
+        } else {
+            msg.delete()
+            return;
+        }
+      
+    }
+    if (msg.channel.id === "372339686443843584") {
         if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
 
         } else if (msg.author.id === client.user.id) {
