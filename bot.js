@@ -1022,7 +1022,7 @@ var said = msg.content.toLowerCase(); //declare said
             console.log(time)
             if (!time) return msg.reply("Please specify a duration for the election.")
             electionOn = true;
-            client.channels.get("372339686443843584").send("@everyone")
+            //client.channels.get("372339686443843584").send("@everyone")
             client.channels.get("372339686443843584").send({
                 embed: {
                     color: 7506394,
