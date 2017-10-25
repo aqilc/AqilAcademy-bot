@@ -1192,7 +1192,7 @@ var said = msg.content.toLowerCase(); //declare said
                 disqualified = [];
                 msg.reply("<:clydeApprove:366662545504862211> I've reset all election stats, there is now no election in progress.")
         }
-        }
+        
         
     }
     if (msg.content === prefix + "listemoji") {
