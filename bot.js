@@ -1171,6 +1171,7 @@ var said = msg.content.toLowerCase(); //declare said
         }
     }
     if (msg.content.startsWith(prefix + "electionreset")) {
+        if (msg.author.id === "299150484218970113" || msg.author.id === "316313763513106434") {
         let setting = said.slice(prefix.length + 14, msg.length);
         switch(setting){
             case "dsq":
@@ -1192,7 +1193,10 @@ var said = msg.content.toLowerCase(); //declare said
                 disqualified = [];
                 msg.reply("<:clydeApprove:366662545504862211> I've reset all election stats, there is now no election in progress.")
         }
-        
+        } else {
+            msg.reply("`ERROR`\nOnly Aqil and Shadow can use this command.")
+            return;
+        }
         
     }
     if (msg.content === prefix + "listemoji") {
