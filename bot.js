@@ -1134,7 +1134,7 @@ var said = msg.content.toLowerCase(); //declare said
     if (said.startsWith(prefix + "suggestparty")) {
         //msg.reply("Party Suggestions are not being currently accepted.")
       var suggestion = msg.content.slice(prefix.length+13, msg.length);
-      msg.reply(":ok_hand: Your suggestion `" + suggestion + "` has been submitted! It can now be found in <#361167250280939520>.")
+      msg.reply(":ok_hand: Your suggestion `" + suggestion + "` has been submitted! It can now be found in <#372339752290091008>.")
       client.channels.get("372339752290091008").send({embed: {
       color: 7506394,
       author: {
