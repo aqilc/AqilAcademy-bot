@@ -1036,7 +1036,7 @@ var said = msg.content.toLowerCase(); //declare said
                         },
                         {
                             name: "How Do I Vote?",
-                            value: "React with <:vote:351429308293578752> for the candidate of your choice.\n**You can only vote once, so choose wisely. Any user who votes multiple times will not have any of their votes counted.**\nThis election will last " + ms(ms(time), { long: true }) + ".\nCandidates can speak to the AqilAcademy users at any time in <#361158521770999808>, just don't spam."
+                            value: "React with <:vote:351429308293578752> for the candidate of your choice.\n**You can only vote once, so choose wisely. Any user who votes multiple times will not have any of their votes counted.**\nThis election will last " + ms(ms(time), { long: true }) + ".\nCandidates can speak to the AqilAcademy users at any time in <#372465500581527558>, just don't spam."
                         },
                         {
                             name: "NOTE",
@@ -1044,7 +1044,7 @@ var said = msg.content.toLowerCase(); //declare said
                         },
                         {
                             name: "Parties",
-                            value: "**You must specify your party as one of the following or else the bot will not work.**\nThonkers\nWizards\nBreakers\nDestroyers"
+                            value: "**You must specify your party as one of the following or else the bot will not work.**\no parties have been created, please contact shadow"
                         }
                     ],
 
