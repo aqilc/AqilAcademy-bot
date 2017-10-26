@@ -140,23 +140,7 @@ var said = msg.content.toLowerCase(); //declare said
             })
         }
     }
-    /*   if(said.startsWith(prefix + "tag")) {
-      var say;
-      var toTag = msg.content.slice(prefix.length+4, msg.length);
-   
-        switch(toTag) {
-    case rolerewards:
-        say = "**WHAT DO I GET FOR CHATTING HERE**\nTake a look at the role rewards! https://shadowka.gitbooks.io/clyde/content/#rolerewards"
-        break;
-    case clydeadmins:
-        say = "The Clyde Admins are Aqil#4788 and Shadow™#8337."
-        break;
-    default:
-        say = "`ERROR`\nTag unavailable."
-            
-}
-      msg.channel.send(say)
-    }*/
+    
     if (msg.content === prefix + "suggest party-instructions") {
         msg.delete()
         msg.channel.send(":scream: _A new channel just appeared for me! What is it???_\nThis is the place to submit your suggestions for parties in the next AqilAcademy election.\n\n**Okay, I just had this great idea for a party! How do I submit it?**\nIt's simple! Just use the `.suggestparty` command anywhere on this server. It will appear here and can be voted on by other members.\n```Example: .suggestparty The Party of ™Ness```\n**I see some great suggestions here, how do I support them?** OR **I don't like this suggestion, how do I downvote it?**\nReact with either <:upvote:361166616081203200> or <:downvote:361166591943114752>.")
@@ -1032,7 +1016,7 @@ var said = msg.content.toLowerCase(); //declare said
                     },
                     fields: [{
                             name: "How Do I Run?",
-                            value: "Use the `run` command anywhere on this server.\n```Usage: .run [PARTY] | [SLOGAN] | [MORE INFORMATION]```"
+                            value: "Use the `run` command anywhere on this server.\n```Usage: .run [PARTY] | [VICE PRESIDENT MENTION] | [SLOGAN] | [MORE INFORMATION]```"
                         },
                         {
                             name: "How Do I Vote?",
@@ -1044,7 +1028,11 @@ var said = msg.content.toLowerCase(); //declare said
                         },
                         {
                             name: "Parties",
-                            value: "**You must specify your party as one of the following or else the bot will not work.**\no parties have been created, please contact shadow"
+                            value: "**You must specify your party as one of the following or else the bot will not work.**no parties have been created, please contact shadow"
+                        },
+                        {
+                            name: "New For This Election",
+                            value: "Vice Presidents! The VP system will only work if you MENTION the user in the run command (as seen above)."
                         }
                     ],
 
@@ -1075,7 +1063,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.delete(3000)
             return;
         }
-        if (!params2[0]) return msg.reply("`ERROR`\nYou have not specified a vice president. Please try again.")
+        if (!msg.mentions.member.first()) return msg.reply("`ERROR`\nYou have not specified a vice president. Please try again.")
         if (!params2[1]) return msg.reply("`ERROR`\nYou have not specified a slogan. Please try again.")
         if (!params2[2]) return msg.reply("`ERROR`\nYou have not specified any more information. Please try again.")
 
