@@ -1063,7 +1063,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.delete(3000)
             return;
         }
-        if (!msg.mentions.member.first()) return msg.reply("`ERROR`\nYou have not specified a vice president. Please try again.")
+        if (!msg.mentions.members.first()) return msg.reply("`ERROR`\nYou have not specified a vice president. Please try again.")
         if (!params2[1]) return msg.reply("`ERROR`\nYou have not specified a slogan. Please try again.")
         if (!params2[2]) return msg.reply("`ERROR`\nYou have not specified any more information. Please try again.")
 
