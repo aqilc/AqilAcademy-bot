@@ -1075,12 +1075,14 @@ var said = msg.content.toLowerCase(); //declare said
             msg.delete(3000)
             return;
         }
-        if (!params2[0]) return msg.reply("`ERROR`\nYou have not specified a slogan. Please try again.")
-        if (!params2[1]) return msg.reply("`ERROR`\nYou have not specified any more information. Please try again.")
+        if (!params2[0]) return msg.reply("`ERROR`\nYou have not specified a vice president. Please try again.")
+        if (!params2[1]) return msg.reply("`ERROR`\nYou have not specified a slogan. Please try again.")
+        if (!params2[2]) return msg.reply("`ERROR`\nYou have not specified any more information. Please try again.")
 
         var party = params1[1]
-        var slogan = params2[0]
-        var info = params2[1]
+        var vp = msg.mentions.members.first()
+        var slogan = params2[1]
+        var info = params2[2]
 
 
 
@@ -1089,7 +1091,7 @@ var said = msg.content.toLowerCase(); //declare said
             embed: {
                 color: 7506394,
                 author: {
-                    name: msg.author.username + " Is Running for President!",
+                    name: msg.author.username + " Is Running for President with " + vp.user.tag + " as Vice President!",
                     icon_url: msg.author.avatarURL
                 },
                 fields: [{
@@ -1117,6 +1119,7 @@ var said = msg.content.toLowerCase(); //declare said
         running.push(msg.author.id)
         var member = msg.member;
         member.addRole(role.id, "Entered Election")
+        vp.addRole(role.id, "VP")
     }
     if (said.startsWith(prefix + "dsq")) {
         if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
