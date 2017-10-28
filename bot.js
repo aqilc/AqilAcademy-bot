@@ -24,6 +24,7 @@ var contains = function(a, b) {
         }
     }
 };
+
 var rbRole = ["<@&364725306478821388>"];
 var badWords = " fuck, shit, ass, yoy, cock, dick, sex, porn, fucker, mother fucker, bitch, asshole, tit, vagina, pussy".split(",");
 
@@ -123,7 +124,8 @@ var said = msg.content.toLowerCase(); //declare said
         }
     }
     for (var i = 0; i < badWords.length; i++) {
-        if (contains(msg.content.toLowerCase(), badWords[i].toLowerCase())) {
+      let message = said.slice(" ")
+        if (contains(message, badWords[i].toLowerCase())) {
             msg.delete();
             msg.reply("Please control your language! <:stop:364887308782272512>");
             let member = msg.author;
