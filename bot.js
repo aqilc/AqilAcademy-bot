@@ -95,7 +95,6 @@ var said = msg.content.toLowerCase(); //declare said
         }
         msg.reply("Your request has been sent.")
         const embed = new Discord.RichEmbed();
-        embed.setContent(requestedEmoji.url)
         embed.setTitle("New Emoji Request: " + requestedEmoji.filename)
         embed.setDescription("Requested by " + msg.author.tag)
         embed.setThumbnail(requestedEmoji.url)
