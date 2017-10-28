@@ -1241,7 +1241,7 @@ client.on('guildMemberAdd', member => {
 
 });
 client.on('guildMemberRemove', member => {
-    client.channels.get("294115797326888961").send(member.tag + " has left the server. <:blobsob:364864813161119764>")
+    client.channels.get("294115797326888961").send(member.user.tag + " has left the server. <:blobsob:364864813161119764>")
     member.send("We're sorry to see you leave AqilAcademy. If you ever want to come back, here's an invite: https://discord.gg/RKESYJ6")
     client.channels.get("358352044094128128").send({
         embed: {
