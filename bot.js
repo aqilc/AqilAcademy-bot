@@ -89,10 +89,14 @@ var said = msg.content.toLowerCase(); //declare said
     }
     if (msg.content.startsWith(prefix + "requestemoji")) {
         let requestedEmoji = msg.attachments.first()
+        if(!requestedEmoji) {
+            msg.reply("You must attach the emoji you would like to request.")
+            return;
+        }
         msg.reply("Your request has been sent.")
         const embed = new Discord.RichEmbed();
         embed.setTitle("New Emoji Request")
-        embed.setDescription("Requested by " + msg.author.tag)
+        embed.setDescription("Requested by " + msg.author.tag + "\nUrl: " + requestedEmoji.url)
         embed.setThumbnail(requestedEmoji.url)
         client.channels.get("373956780746866688").send({ embed })
     }
