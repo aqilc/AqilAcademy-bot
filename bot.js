@@ -63,6 +63,9 @@ var said = msg.content.toLowerCase(); //declare said
                     return;
                 }
             break;
+            case "invite":
+               msg.reply("Here's an invite to this server! https://discord.gg/RKESYJ6\nShare it with everyone you know! :smiley:") 
+            break;
             default:
                 msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added by posting a comment at https://github.com/ShadowKA/AqilAcademy-bot/issues/6 or contacting Shadow.")
 
@@ -1238,8 +1241,8 @@ client.on('guildMemberAdd', member => {
 
 });
 client.on('guildMemberRemove', member => {
-    client.channels.get("294115797326888961").send("<@" + member.id + "> has left the server. <:blobsob:364864813161119764>")
-    member.send("We're sorry to see you leave AqilAcademy. If you ever want to come back, here's an invite: https://discord.gg/9mWvJsH")
+    client.channels.get("294115797326888961").send(member.tag + " has left the server. <:blobsob:364864813161119764>")
+    member.send("We're sorry to see you leave AqilAcademy. If you ever want to come back, here's an invite: https://discord.gg/RKESYJ6")
     client.channels.get("358352044094128128").send({
         embed: {
             color: 16711680,
