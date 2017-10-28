@@ -127,7 +127,7 @@ var said = msg.content.toLowerCase(); //declare said
         }
     }
     for (var i = 0; i < badWords.length; i++) {
-      let message = said.slice(" ")
+      let message = said.split(" ")
         if (contains(message, badWords[i].toLowerCase())) {
             msg.delete();
             msg.reply("Please control your language! <:stop:364887308782272512>");
