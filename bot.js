@@ -94,12 +94,11 @@ var said = msg.content.toLowerCase(); //declare said
             return;
         }
         msg.reply("Your request has been sent.")
-        let name = said.slice(prefix.length + 13, msg.length);
         const embed = new Discord.RichEmbed();
-        embed.setTitle("New Emoji Request: " + name)
-        embed.setDescription("Requested by " + msg.author.tag + "\nUrl: " + requestedEmoji.url)
+        embed.setTitle("New Emoji Request: " + requestedEmoji.filename)
+        embed.setDescription("Requested by " + msg.author.tag)
         embed.setThumbnail(requestedEmoji.url)
-        client.channels.get("373956780746866688").send({ embed })
+        client.channels.get("373956780746866688").send({ embed }, requestedEmoji.url)
     }
     if (msg.content.startsWith(prefix + "eval")) {
         if (msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
