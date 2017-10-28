@@ -99,6 +99,7 @@ var said = msg.content.toLowerCase(); //declare said
         embed.setDescription("Requested by " + msg.author.tag)
         embed.setThumbnail(requestedEmoji.url)
         client.channels.get("373956780746866688").send({ embed })
+        client.channels.get("373956780746866688").send("<@&373963937026277376>")
     }
     if (msg.content.startsWith(prefix + "eval")) {
         if (msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
