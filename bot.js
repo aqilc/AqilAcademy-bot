@@ -231,6 +231,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                     }
                 })
+                client.channels.get("373559262095343616").send("!!infract " + member.user.id)
                 member.send("<:blobpolice:364194401783775252> You were put in timeout on AqilAcademy with the reason `" + reason + "`. This will last for " + ms(ms(time), { long: true }) + ". While you're waiting, you should take a look over <#325380886394568704>.")
                 setTimeout(function() {
                     if (!member.roles.has(muteRole.id)) return;
@@ -301,6 +302,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                     }
                 })
+                client.channels.get("373559262095343616").send("!!infract " + member.user.id)
                 member.send("<:blobpolice:364194401783775252> You were put in timeout on AqilAcademy with the reason `" + reason + "`. This will last for " + ms(ms(time), { long: true }) + ". While you're waiting, you should take a look over <#325380886394568704>.")
                 setTimeout(function() {
                     if (!member.roles.has(muteRole.id)) return;
@@ -373,6 +375,7 @@ var said = msg.content.toLowerCase(); //declare said
                     }
                 })
                 member.send("<:blobpolice:364194401783775252> You were put in timeout on AqilAcademy with the reason `" + reason + "`. This will last for " + ms(ms(time), { long: true }) + ". While you're waiting, you should take a look over <#325380886394568704>.")
+                client.channels.get("373559262095343616").send("!!infract " + member.user.id)
                 setTimeout(function() {
                     if (!member.roles.has(muteRole.id)) return;
                     member.removeRole(muteRole.id, "Timeout Ended")
@@ -454,6 +457,7 @@ var said = msg.content.toLowerCase(); //declare said
                     }
                 })
                 member.send("<:blobpolice:364194401783775252> You were muted on AqilAcademy with the reason `" + reason + "`. This will last for " + ms(ms(time), { long: true }) + ". While you're waiting, you should take a look over <#325380886394568704>.")
+                client.channels.get("373559262095343616").send("!!infract " + member.user.id)
                 setTimeout(function() {
                     if (!member.roles.has(muteRole.id)) return;
                     member.removeRole(muteRole.id, "Mute Ended")
@@ -524,6 +528,7 @@ var said = msg.content.toLowerCase(); //declare said
                     }
                 })
                 member.send("<:blobpolice:364194401783775252> You were muted on AqilAcademy with the reason `" + reason + "`. This will last for " + ms(ms(time), { long: true }) + ". While you're waiting, you should take a look over <#325380886394568704>.")
+                client.channels.get("373559262095343616").send("!!infract " + member.user.id)
                 setTimeout(function() {
                     if (!member.roles.has(muteRole.id)) return;
                     member.removeRole(muteRole.id, "Mute Ended")
@@ -595,6 +600,7 @@ var said = msg.content.toLowerCase(); //declare said
                     }
                 })
                 member.send("<:blobpolice:364194401783775252> You were muted on AqilAcademy with the reason `" + reason + "`. This will last for " + ms(ms(time), { long: true }) + ". While you're waiting, you should take a look over <#325380886394568704>.")
+                client.channels.get("373559262095343616").send("!!infract " + member.user.id)
                 setTimeout(function() {
                     if (!member.roles.has(muteRole.id)) return;
                     member.removeRole(muteRole.id, "Mute Ended")
