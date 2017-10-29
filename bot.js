@@ -1208,6 +1208,22 @@ var said = msg.content.toLowerCase(); //declare said
     if (msg.content === prefix + "listemoji") {
         msg.channel.send(msg.guild.emojis.map(r => r.toString()).join("  "));
     }
+    if(msg.content.startswith("!!kick") && msg.channel.id === "373559262095343616") {
+        let userID = said.slice(prefix.length + 6, msg.length);
+        let aqilacademy = client.guilds.get("294115797326888961")
+        let member = aqilacademy.members.get(userID)
+        member.kick("Auto Kick for 3 Infractions")
+        client.channels.get("358352044094128128").send({
+                            embed: {
+                                color: 16711680,
+                                fields: [{
+                                    name: "<:blobpolice:364194401783775252> Member Kicked",
+                                    value: "Member: " + member.user.username + "#" + member.user.discriminator + "\nMember ID: " + member.user.id + "\nModerator: Clyde#5067\nReason: Auto Kick for 3 Infractions"
+                                }],
+
+                            }
+                        })
+    }
     /*  if(said.startsWith(prefix + "activitylog-demo")) {
         msg.reply("Take a look at <#358352044094128128>")
         client.channels.get("358352044094128128").send("<:clydePromote:358682594080194560> **Shadow™#8337 has been promoted to Moderator!**")
