@@ -1208,7 +1208,7 @@ var said = msg.content.toLowerCase(); //declare said
     if (msg.content === prefix + "listemoji") {
         msg.channel.send(msg.guild.emojis.map(r => r.toString()).join("  "));
     }
-    if(msg.content.startswith("!!kick") && msg.channel.id === "373559262095343616") {
+    if(msg.content.startsWith("!!kick") && msg.channel.id === "373559262095343616") {
         let userID = said.slice(prefix.length + 6, msg.length);
         let aqilacademy = client.guilds.get("294115797326888961")
         let member = aqilacademy.members.get(userID)
