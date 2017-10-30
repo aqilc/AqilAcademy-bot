@@ -1162,9 +1162,9 @@ var said = msg.content.toLowerCase(); //declare said
         }
       ],
     }
-  })
+  })*/
     }
-    if(msg.channel.id === "372339752290091008") {
+    /*if(msg.channel.id === "372339752290091008") {
       if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
 
         } else if (msg.author.id === client.user.id) {
