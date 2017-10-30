@@ -1030,7 +1030,7 @@ var said = msg.content.toLowerCase(); //declare said
             console.log(time)
             if (!time) return msg.reply("Please specify a duration for the election.")
             electionOn = true;
-            //client.channels.get("372339686443843584").send("@everyone")
+            client.channels.get("372339686443843584").send("@everyone")
             client.channels.get("372339686443843584").send({
                 embed: {
                     color: 7506394,
@@ -1052,7 +1052,7 @@ var said = msg.content.toLowerCase(); //declare said
                         },
                         {
                             name: "Parties",
-                            value: "**You must specify your party as one of the following or else the bot will not work.**\nBlobhammer\nFederalist\nLeague\nBanhammers"
+                            value: "**You must specify your party as one of the following or else the bot will not work.**\nBlobhammer\nFederalists\nLeague\nBanhammers"
                         },
                         {
                             name: "New For This Election",
