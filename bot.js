@@ -1186,7 +1186,7 @@ var said = msg.content.toLowerCase(); //declare said
         }
     }
     if (msg.content.startsWith(prefix + "electionreset")) {
-        if (msg.author.id === "299150484218970113" || msg.author.id === "316313763513106434") {
+        if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
         let setting = said.slice(prefix.length + 14, msg.length);
         switch(setting){
             case "dsq":
