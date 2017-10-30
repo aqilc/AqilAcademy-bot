@@ -26,7 +26,7 @@ var contains = function(a, b) {
 };
 
 var rbRole = ["<@&364725306478821388>"];
-var badWords = "fuck, shit, ass, yoy, cock, dick, sex, porn, fucker, mother fucker, bitch, asshole, tit, vagina, pussy".split(", ");
+var badWords = "fuck, shit, yoy, cock, dick, sex, porn, fucker, mother fucker, bitch, asshole, tit, vagina, pussy".split(", ");
 
 
 
@@ -153,6 +153,8 @@ var said = msg.content.toLowerCase(); //declare said
 
                 }
             })
+            client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
+            client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content)
         }
     }
     
@@ -1009,6 +1011,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                 }
             })
+            client.channels.get("373559262095343616").send("!!infract " + member.user.id)
         } else {
 
             msg.reply("`ERROR`\nYou are not a Moderator.")
