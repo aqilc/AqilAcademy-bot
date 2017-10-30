@@ -1052,7 +1052,7 @@ var said = msg.content.toLowerCase(); //declare said
                         },
                         {
                             name: "Parties",
-                            value: "**You must specify your party as one of the following or else the bot will not work.**no parties have been created, please contact shadow"
+                            value: "**You must specify your party as one of the following or else the bot will not work.**\nBlobhammer\nFederalist\nLeague\nBanhammers"
                         },
                         {
                             name: "New For This Election",
@@ -1074,15 +1074,15 @@ var said = msg.content.toLowerCase(); //declare said
         if (disqualified.includes(msg.author.id) === true) return msg.reply("`ERROR`\nYou have been disqualified from the election.")
         if (running.includes(msg.author.id) === true) return msg.reply("`ERROR`\nYou have already entered the race.")
         let params1 = said.split(" ").slice(0)
-        //params[1] = party
+        params1[1] = params1[1].toLowerCase()
         console.log(params1)
         let params2 = msg.content.split(" | ").slice(1);
         //params2 = slogan and more info
         console.log(params2)
 
-        if (params1[1] === "thonkers") {
-            params1[1] = "The Thonkers <:thonk:358630992355000342>";
-        } else if (params1[1] === "wizards") { params1[1] = "Tech Wizards"; } else if (params1[1] === "breakers") { params1[1] = "ServerBreakers"; } else if (params1[1] === "destroyers") { params1[1] = "The Destroyers" } else {
+        if (params1[1] === "blobhammer") {
+            params1[1] = "The <:blobhammer:364493777882185728>";
+        } else if (params1[1] === "federalists") { params1[1] = "AqilAcademy Federalists"; } else if (params1[1] === "league") { params1[1] = "League of Discordians"; } else if (params1[1] === "banhammers") { params1[1] = "The Banhammers" } else {
             msg.reply("`ERROR`\nParty was not specified correctly. Please try again.").then(msg => msg.delete(3000))
             msg.delete(3000)
             return;
@@ -1147,8 +1147,8 @@ var said = msg.content.toLowerCase(); //declare said
         msg.reply("**Looking for info about Clyde? Want to know all of the commands?**\n\nHead on over to https://shadowka.gitbooks.io/clyde/content/ and you'll see info about all the different functions of Clyde.");
     }
     if (said.startsWith(prefix + "suggestparty")) {
-        //msg.reply("Party Suggestions are not being currently accepted.")
-      var suggestion = msg.content.slice(prefix.length+13, msg.length);
+        msg.reply("Party Suggestions are not being currently accepted.")
+      /*var suggestion = msg.content.slice(prefix.length+13, msg.length);
       msg.reply(":ok_hand: Your suggestion `" + suggestion + "` has been submitted! It can now be found in <#372339752290091008>.")
       client.channels.get("372339752290091008").send({embed: {
       color: 7506394,
@@ -1174,7 +1174,7 @@ var said = msg.content.toLowerCase(); //declare said
             return;
         }
       
-    }
+    }*/
     if (msg.channel.id === "372339686443843584") {
         if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
 
