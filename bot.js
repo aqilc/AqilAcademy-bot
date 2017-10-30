@@ -1074,6 +1074,7 @@ var said = msg.content.toLowerCase(); //declare said
         if (disqualified.includes(msg.author.id) === true) return msg.reply("`ERROR`\nYou have been disqualified from the election.")
         if (running.includes(msg.author.id) === true) return msg.reply("`ERROR`\nYou have already entered the race.")
         let params1 = said.split(" ").slice(0)
+        if(!params1[1]) return msg.reply("`ERROR`\nYou have not specified a party. Please try again.");
         params1[1] = params1[1].toLowerCase()
         console.log(params1)
         let params2 = msg.content.split(" | ").slice(1);
