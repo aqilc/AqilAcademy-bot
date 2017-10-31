@@ -37,7 +37,7 @@ function contains(a, b) {
 
 var rbRole = ["<@&364725306478821388>"];
 var badWords = "fuck,shit,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,asshole,tit,vagina,pussy".split(",");
-var goodWords = "class,cows".split(",");
+var goodWords = "class,cows,oyoy".split(",");
 
 
 client.on('message', msg => {
