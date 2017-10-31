@@ -46,7 +46,7 @@ client.on('message', msg => {
             msg.delete();
             msg.reply("Please control your language! <:stop:364887308782272512>");
             let member = msg.author;
-            member.send("**You've been warned in AqilAcademy:**\nPlease do not use words that go against the language filter. Thank you!");
+            member.send("**You've been warned in AqilAcademy:**\nPlease do not use words that go against the language filter. Thank you!\n\n_If you believe this word was filtered in error, please contact <@299150484218970113>._");
             client.channels.get("358352044094128128").send({
                 embed: {
                     color: 16753920,
