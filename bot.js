@@ -17,7 +17,17 @@ function clean(text) {
     else
         return text;
 }
-var contains = function(a, b) {
+function removePunctuation(str) {
+    var m = '!@#$%^&*()_+-=~`.,></?"\':;}{[]\\☺☻';
+    var r = '';
+    for(var i = 0; i < str.length; i++){
+        if (m.indexOf(str[i]) === -1) {
+            r += str[i];
+        }
+    }
+    return r;
+}
+function contains(a, b) {
     for (var i = 0; i < a.length; i++) {
         if (a.slice(i, i + b.length) === b) {
             return true;
@@ -139,9 +149,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.member.ban("PINGED THE RED BLOBS 😡")
         }
     }
-    for (var i = 0; i < badWords.length; i++) {
-       let message = said.slice(" ")
-       if (contains(message, badWords[i].toLowerCase())) {
+       if(badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase()))) {
             if(msg.author.id === client.user.id) return;
             msg.delete();
             msg.reply("Please control your language! <:stop:364887308782272512>");
@@ -160,7 +168,7 @@ var said = msg.content.toLowerCase(); //declare said
             client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
             client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content)
         }
-    }
+    
     
     if (msg.content === prefix + "suggest party-instructions") {
         msg.delete()
