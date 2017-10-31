@@ -41,7 +41,27 @@ var badWords = "fuck,shit,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,assh
 
 
 client.on('message', msg => {
-    if (msg.channel.type !== "text") return;
+    if(badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase())) && msg.channel.type === 'dm') {
+            if(msg.author.id === client.user.id) return;
+            msg.delete();
+            msg.reply("Please control your language! <:stop:364887308782272512>");
+            let member = msg.author;
+            member.send("**You've been warned in AqilAcademy:**\nPlease do not use words that go against the language filter. Thank you!");
+            client.channels.get("358352044094128128").send({
+                embed: {
+                    color: 16753920,
+                    fields: [{
+                        name: "<:blobpolice:364194401783775252> Member Warned",
+                        value: "Member: " + msg.author.username + "#" + msg.author.discriminator + "\nMember ID: " + msg.author.id + "\nModerator: Clyde#5067" + "\nWarning: Please do not use words that go against the language filter. Thank you!"
+                    }],
+
+                }
+            })
+            client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
+            client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content)
+        }
+    if (!msg.content.startsWith(prefix)) return;
+    if (msg.channel.type === 'dm') return;
     if (msg.author.id === "188350841600606209") return;
 var said = msg.content.toLowerCase(); //declare said
     if(msg.content.startsWith(prefix + "tag")) {
@@ -149,27 +169,7 @@ var said = msg.content.toLowerCase(); //declare said
             })
             msg.member.ban("PINGED THE RED BLOBS 😡")
         }
-    }
-       if(badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase()))) {
-            if(msg.author.id === client.user.id) return;
-            msg.delete();
-            msg.reply("Please control your language! <:stop:364887308782272512>");
-            let member = msg.author;
-            member.send("**You've been warned in AqilAcademy:**\nPlease do not use words that go against the language filter. Thank you!");
-            client.channels.get("358352044094128128").send({
-                embed: {
-                    color: 16753920,
-                    fields: [{
-                        name: "<:blobpolice:364194401783775252> Member Warned",
-                        value: "Member: " + msg.author.username + "#" + msg.author.discriminator + "\nMember ID: " + msg.author.id + "\nModerator: Clyde#5067" + "\nWarning: Please do not use words that go against the language filter. Thank you!"
-                    }],
-
-                }
-            })
-            client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
-            client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content)
-        }
-    
+    }   
     
     if (msg.content === prefix + "suggest party-instructions") {
         msg.delete()
