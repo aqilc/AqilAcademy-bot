@@ -41,7 +41,7 @@ var goodWords = "class,cows".split(",");
 
 
 client.on('message', msg => {
-    if(badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase())) && !badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase()))) {
+    if(badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase())) && !goodWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase()))) {
             if(msg.author.id === client.user.id) return;
             msg.delete();
             msg.reply("Please control your language! <:stop:364887308782272512>");
