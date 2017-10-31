@@ -140,7 +140,8 @@ var said = msg.content.toLowerCase(); //declare said
         }
     }
     for (var i = 0; i < badWords.length; i++) {
-      if (contains(msg.content.toLowerCase(), badWords[i].toLowerCase())) {
+       let message = said.slice(" ")
+ +        if (contains(message, badWords[i].toLowerCase())) {
             if(msg.author.id === client.user.id) return;
             msg.delete();
             msg.reply("Please control your language! <:stop:364887308782272512>");
