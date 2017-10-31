@@ -37,11 +37,11 @@ function contains(a, b) {
 
 var rbRole = ["<@&364725306478821388>"];
 var badWords = "fuck,shit,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,asshole,tit,vagina,pussy".split(",");
-
+var goodWords = "class,cows".split(",");
 
 
 client.on('message', msg => {
-    if(badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase()))) {
+    if(badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase())) && !badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase()))) {
             if(msg.author.id === client.user.id) return;
             msg.delete();
             msg.reply("Please control your language! <:stop:364887308782272512>");
