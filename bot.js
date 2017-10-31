@@ -52,7 +52,7 @@ client.on('message', msg => {
                     color: 16753920,
                     fields: [{
                         name: "<:blobpolice:364194401783775252> Member Warned",
-                        value: "Member: " + msg.author.username + "#" + msg.author.discriminator + "\nMember ID: " + msg.author.id + "\nModerator: Clyde#5067" + "\nWarning: Used word " + badWords.some(word => return word) + "Please do not use words that go against the language filter. Thank you!"
+                        value: "Member: " + msg.author.username + "#" + msg.author.discriminator + "\nMember ID: " + msg.author.id + "\nModerator: Clyde#5067" + "\nWarning: Used word " + badWords.find(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase()))) + "Please do not use words that go against the language filter. Thank you!"
                     }],
 
                 }
