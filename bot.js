@@ -41,6 +41,7 @@ var badWords = "fuck,shit,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,assh
 
 
 client.on('message', msg => {
+    if (msg.channel.type !== "text") return;
     if (msg.author.id === "188350841600606209") return;
 var said = msg.content.toLowerCase(); //declare said
     if(msg.content.startsWith(prefix + "tag")) {
