@@ -41,7 +41,7 @@ var goodWords = "class,cows,oyoy,glass".split(",");
 
 
 client.on('message', msg => {
-    if(badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase())) && !goodWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase()))) {
+    /*if(badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase())) && !goodWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase()))) {
             if(msg.author.id === client.user.id) return;
             msg.delete();
             msg.reply("Please control your language! <:stop:364887308782272512>");
@@ -59,8 +59,8 @@ client.on('message', msg => {
             })
             client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
             client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content)
-        }
-    if (!msg.content.startsWith(prefix)) return;
+        }*/
+    
     if (msg.author.id === "188350841600606209") return;
 var said = msg.content.toLowerCase(); //declare said
     if(msg.content.startsWith(prefix + "tag")) {
