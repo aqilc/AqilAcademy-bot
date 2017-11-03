@@ -1159,6 +1159,27 @@ var said = msg.content.toLowerCase(); //declare said
     if (said === prefix + "help") {
         msg.reply("**Looking for info about Clyde? Want to know all of the commands?**\n\nHead on over to https://shadowka.gitbooks.io/clyde/content/ and you'll see info about all the different functions of Clyde.");
     }
+    if (said.startsWith(prefix + "suggest")) {
+        var suggestion = msg.content.slice(prefix.length+8, msg.length);
+        if(!suggestion) {
+            msg.reply("`ERROR`\nYou have not specified a suggestion.")
+            return;
+        }
+      msg.reply(":ok_hand: Your suggestion `" + suggestion + "` has been submitted!")
+      client.channels.get("348533185094877214").send({embed: {
+      color: 7506394,
+      author: {
+        name: "Server Suggestion from " + msg.author.username,
+        icon_url: msg.author.avatarURL
+      },
+      fields: [{
+          name: "Suggestion:",
+          value: suggestion
+        }
+      ],
+    }
+  })
+    }
     if (said.startsWith(prefix + "suggestparty")) {
         msg.reply("Party Suggestions are not being currently accepted.")
       /*var suggestion = msg.content.slice(prefix.length+13, msg.length);
