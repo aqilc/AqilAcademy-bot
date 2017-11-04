@@ -1159,7 +1159,7 @@ var said = msg.content.toLowerCase(); //declare said
     if (said === prefix + "help") {
         msg.reply("**Looking for info about Clyde? Want to know all of the commands?**\n\nHead on over to https://shadowka.gitbooks.io/clyde/content/ and you'll see info about all the different functions of Clyde.");
     }
-    if (said.startsWith(prefix + "suggest")) {
+    if (said.startsWith(prefix + "suggest ")) {
         var suggestion = msg.content.slice(prefix.length+8, msg.length);
         if(!suggestion) {
             msg.reply("`ERROR`\nYou have not specified a suggestion.")
