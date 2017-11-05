@@ -99,6 +99,9 @@ var said = msg.content.toLowerCase(); //declare said
             case "noping":
                 msg.channel.send("DO NOT PING SHADOW. or else... https://cdn.discordapp.com/attachments/356496172203900928/374705013462794240/Screen_Shot_2017-10-30_at_7.41.50_PM.png")
             break;
+            case "soontm":
+                msg.channel.send("<:soontm:375600364373934081>\nsoon™ does not represent any time in the past present or future. We do not guarantee that soon™ will be here before the end of time.").then(msg => msg.react(":soontm:375600364373934081"))
+            break;
             default:
                 msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added by posting a comment at https://github.com/ShadowKA/AqilAcademy-bot/issues/6 or contacting Shadow.")
 
