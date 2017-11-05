@@ -61,7 +61,7 @@ client.on('message', msg => {
             client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content)
         }*/
     
-    if (msg.author.id === "188350841600606209") return;
+    
 var said = msg.content.toLowerCase(); //declare said
     if(msg.content.startsWith(prefix + "tag")) {
         let saidTag = said.slice(prefix.length + 4, msg.length);
