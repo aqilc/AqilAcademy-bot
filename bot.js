@@ -35,7 +35,7 @@ function contains(a, b) {
     }
 };
 
-var rbRole = ["<@&364725306478821388>"];
+var rbRole = ["<@&374874233437945856>"];
 var badWords = "fuck,shit,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,asshole,tit,vagina,pussy,ass".split(",");
 var goodWords = "class,cows,oyoy,glass".split(",");
 
@@ -158,18 +158,18 @@ var said = msg.content.toLowerCase(); //declare said
 
     for (var i = 0; i < rbRole.length; i++) {
         if (contains(msg.content.toLowerCase(), rbRole[i].toLowerCase())) {
-            msg.channel.send("<:blobhammer:364493777882185728> " + msg.author.tag + " has been banned for `PINGED THE RED BLOBS 😡`.")
+            msg.channel.send("<:blobhammer:364493777882185728> " + msg.author.tag + " has been banned for `PINGED THE HYPERTHINKS 😡`.")
             client.channels.get("358352044094128128").send({
                 embed: {
                     color: 16711680,
                     fields: [{
                         name: "<:blobhammer:364493777882185728> Member Banned",
-                        value: "Member: " + msg.author.tag + "\nMember ID: " + msg.author.id + "\nModerator: Red Blobs Everywhere\nReason: PINGED THE RED BLOBS 😡"
+                        value: "Member: " + msg.author.tag + "\nMember ID: " + msg.author.id + "\nModerator: Hyperthinks Everywhere\nReason: PINGED THE HYPERTHINKS 😡"
                     }],
 
                 }
             })
-            msg.member.ban("PINGED THE RED BLOBS 😡")
+            msg.member.ban("PINGED THE HYPERTHINKS 😡")
         }
     }   
     
