@@ -102,6 +102,16 @@ var said = msg.content.toLowerCase(); //declare said
             case "soontm":
                 msg.channel.send("<:soontm:375600364373934081>\nsoon™ does not represent any time in the past present or future. We do not guarantee that soon™ will be here before the end of time.").then(msg => msg.react(":soontm:375600364373934081"))
             break;
+            case "nospam":
+                if(!msg.mentions.members.first()) {
+                msg.channel.send("Don't spam... or else: https://cdn.discordapp.com/attachments/356496172203900928/377580622312636453/Screen_Shot_2017-11-07_at_5.10.08_PM.png")
+                } else {
+                let target = msg.mentions.members.first()
+                let targetID = target.user.id
+                msg.channel.send("<:AGONY:377581582979956738> HEY <@" + targetID + "> - Don't spam... or else: https://cdn.discordapp.com/attachments/356496172203900928/377580622312636453/Screen_Shot_2017-11-07_at_5.10.08_PM.png")
+                
+                }
+            break;
             default:
                 msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added by posting a comment at https://github.com/ShadowKA/AqilAcademy-bot/issues/6 or contacting Shadow.")
 
