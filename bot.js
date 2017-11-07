@@ -117,7 +117,7 @@ var said = msg.content.toLowerCase(); //declare said
                 let toSay = Math.floor(Math.random() * responses.length)
                 msg.channel.send(`${responses[toSay]}`).then(msg => {
                     if(toSay === 7) {
-                        msg.react(":WHOPINGEDME:")
+                        msg.react(":WHOPINGEDME:377279438028800000")
                     }
                 })
             break;
