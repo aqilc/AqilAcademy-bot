@@ -112,6 +112,15 @@ var said = msg.content.toLowerCase(); //declare said
                 
                 }
             break;
+            case "breaksilence":
+                const responses = ["<:kek:370319189640216599> :microphone2: :loudspeaker: **_BREAKS SILENCE, EVERYONE'S EARS, AND ALL NEARBY WINDOWS ) ) )_**", ":loudspeaker: **_BREAKS SILENCE_ )))**", "Breaking silence almost never works, I'm not going to do that.", "<:hyperthink:370891041458618370>", ":sleeping: ask me later", "nah - not in the mood to do that right now", ":hammer: TIME TO BREAK THE SILENCE!!! :smiling_imp:", ":thinking: Maybe an <@&377601228714147846> ping will help!"]
+                let toSay = Math.floor(Math.random() * responses.length)
+                msg.channel.send(`${responses[toSay]}`).then(msg => {
+                    if(toSay === 7) {
+                        msg.react(":WHOPINGEDME:")
+                    }
+                })
+            break;
             default:
                 msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added by posting a comment at https://github.com/ShadowKA/AqilAcademy-bot/issues/6 or contacting Shadow.")
 
