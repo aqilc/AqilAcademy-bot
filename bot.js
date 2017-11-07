@@ -64,8 +64,8 @@ client.on('message', msg => {
     
 var said = msg.content.toLowerCase(); //declare said
     if(msg.content.startsWith(prefix + "tag")) {
-        let saidTag = said.slice(prefix.length + 4, msg.length);
-        switch(saidTag) {
+        let saidTag = said.split(" ")
+        switch(saidTag[1]) {
             case "offtopic":
                 msg.delete()
                 msg.channel.send("Woah, that's getting off topic! Please move to <#325046144495255552>!")
