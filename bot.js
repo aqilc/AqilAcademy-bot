@@ -75,6 +75,7 @@ var said = msg.content.toLowerCase(); //declare said
                 msg.channel.send("The Clyde Admins are Shadow™#8337 and Aqil#4788. ")
             break;
             case "banme":
+                if(msg.author.id === "325070981158928393") {
                 msg.reply("<:clydeWarnRed:358724931107684362> Something went wrong. The Clyde Admins have been notified. Please try again later.")
                 } else {
                     msg.reply("`ERROR`\nYou are not <@325070981158928393>")
