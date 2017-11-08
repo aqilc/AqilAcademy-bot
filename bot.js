@@ -36,6 +36,7 @@ function contains(a, b) {
 };
 
 var rbRole = ["<@&374874233437945856>"];
+var cri = [";-;"];
 var badWords = "fuck,shit,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,asshole,tit,vagina,pussy,ass".split(",");
 var goodWords = "class,cows,oyoy,glass".split(",");
 
@@ -166,6 +167,7 @@ var said = msg.content.toLowerCase(); //declare said
 
     for (var i = 0; i < rbRole.length; i++) {
         if (contains(msg.content.toLowerCase(), rbRole[i].toLowerCase())) {
+            if(!msg.member.bannable) return msg.author.send(":tired_face: I can't ban you on AqilAcademy! But I'm just letting you know that YOU SHOULD NEVER PING THE HYPERTHINKS EVER. Kthxbai.")
             msg.channel.send("<:blobhammer:364493777882185728> " + msg.author.tag + " has been banned for `PINGED THE HYPERTHINKS 😡`.")
             client.channels.get("358352044094128128").send({
                 embed: {
@@ -178,6 +180,13 @@ var said = msg.content.toLowerCase(); //declare said
                 }
             })
             msg.member.ban("PINGED THE HYPERTHINKS 😡")
+        }
+    }   
+    for (var i = 0; i < cri.length; i++) {
+        if (contains(msg.content.toLowerCase(), cri[i].toLowerCase())) {
+            if(msg.author.id === client.user.id) return;
+            msg.reply ("<:AGONY:377581582979956738> NO MORE ;-;! YOU MUST USE <:cri:377938170941145089>.\n_Psst... this has given you an infraction. Three more and you get kicked._")
+            client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
         }
     }   
     
@@ -1266,6 +1275,7 @@ var said = msg.content.toLowerCase(); //declare said
         let userID = said.slice(prefix.length + 6, msg.length);
         let aqilacademy = client.guilds.get("294115797326888961")
         let member = aqilacademy.members.get(userID)
+        if(!member.kickable) return member.send(":tired_face: I can't kick you from AqilAcademy! But I'm just letting you know that you have three or more infractions and should STOP doing stuff that gives you infractions. Kthxbai");
         member.kick("Auto Kick for 3 Infractions")
         client.channels.get("358352044094128128").send({
                             embed: {
