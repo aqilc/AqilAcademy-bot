@@ -75,19 +75,7 @@ var said = msg.content.toLowerCase(); //declare said
                 msg.channel.send("The Clyde Admins are Shadow™#8337 and Aqil#4788. ")
             break;
             case "banme":
-                if(msg.author.id === "325070981158928393") {
-                msg.channel.send("<:blobhammer:364493777882185728> " + msg.author.tag + " has been banned for `Wanted to be banned with a command`.")
-            client.channels.get("358352044094128128").send({
-                embed: {
-                    color: 16711680,
-                    fields: [{
-                        name: "<:blobhammer:364493777882185728> Member Banned",
-                        value: "Member: " + msg.author.tag + "\nMember ID: " + msg.author.id + "\nModerator: " + msg.author.tag + "\nReason: Wanted to be banned with a command"
-                    }],
-
-                }
-            })
-            msg.member.ban("Wanted to be banned with a command")
+                msg.reply("<:clydeWarnRed:358724931107684362> Something went wrong. The Clyde Admins have been notified. Please try again later.")
                 } else {
                     msg.reply("`ERROR`\nYou are not <@325070981158928393>")
                     return;
