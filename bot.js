@@ -35,7 +35,7 @@ function contains(a, b) {
     }
 };
 
-var rbRole = ["<@&374874233437945856>"];
+var rbRole = ["<@&364725306478821388>"];
 var cri = [";-;"];
 var badWords = "fuck,shit,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,asshole,tit,vagina,pussy,ass".split(",");
 var goodWords = "class,cows,oyoy,glass".split(",");
