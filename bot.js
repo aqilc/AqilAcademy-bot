@@ -64,6 +64,57 @@ client.on('message', msg => {
     
     
 var said = msg.content.toLowerCase(); //declare said
+    if (msg.content.startsWith(prefix + "cookpie")) {
+          const responses = ["burnt", "perfect", "undercooked"]
+                  let toSay = Math.floor(Math.random() * responses.length)
+                  console.log(toSay)
+                  if(toSay === 0) {
+                      msg.reply("Your pie is cooking!").then(msg => {
+                          msg.delete(3000)
+                      })
+                      msg.channel.send("<:cookingpie:378570967171072010>\n:fire:").then(msg => {
+                          setTimeout(function() {
+                      msg.edit("<:burntpie:378570967170940928>")
+
+                  }, 3000)
+
+
+                      })
+                      setTimeout(function() {
+                        msg.reply("Oh no! Your pie burnt!")
+                      }, 3000)
+                  } else if(toSay === 1) {
+                      msg.reply("Your pie is cooking!").then(msg => {
+                          msg.delete(3000)
+                      })
+                      msg.channel.send("<:cookingpie:378570967171072010>\n:fire:").then(msg => {
+                          setTimeout(function() {
+                      msg.edit("<:perfectpie:378571086436237315>")
+
+                  }, 3000)
+
+
+                      })
+                      setTimeout(function() {
+                        msg.reply("Your pie was cooked to perfection! Yum!")
+                      }, 3000)
+                  } else if (toSay === 2) {
+                      msg.reply("Your pie is cooking!").then(msg => {
+                          msg.delete(3000)
+                      })
+                      msg.channel.send("<:cookingpie:378570967171072010>\n:fire:").then(msg => {
+                          setTimeout(function() {
+                      msg.edit("<:cookingpie:378570967171072010>")
+
+                  }, 3000)
+
+
+                      })
+                      setTimeout(function() {
+                        msg.reply("Oh no! Your pie was undercooked!")
+                      }, 3000)
+                  }
+      }
     if(msg.content.startsWith(prefix + "tag")) {
         let saidTag = said.split(" ")
         switch(saidTag[1]) {
