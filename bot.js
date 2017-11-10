@@ -36,7 +36,7 @@ function contains(a, b) {
 };
 
 var rbRole = ["<@&364725306478821388>"];
-var cri = [";-;"];
+
 var badWords = "fuck,shit,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,asshole,tit,vagina,pussy,ass".split(",");
 var goodWords = "class,cows,oyoy,glass".split(",");
 
@@ -237,13 +237,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.member.ban("PINGED THE HYPERTHINKS 😡")
         }
     }   
-    for (var i = 0; i < cri.length; i++) {
-        if (contains(msg.content.toLowerCase(), cri[i].toLowerCase())) {
-            if(msg.author.id === client.user.id) return;
-            msg.reply ("<:AGONY:377581582979956738> NO MORE ;-;! YOU MUST USE <:cri:377938170941145089>.\n_Psst... this has given you an infraction. Three more and you get kicked._")
-            client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
-        }
-    }   
+    
     
     if (msg.content === prefix + "suggest party-instructions") {
         msg.delete()
