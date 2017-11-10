@@ -164,59 +164,7 @@ var said = msg.content.toLowerCase(); //declare said
     }
     
     if (msg.author.bot && !client.user) return;
-    if (msg.content.startsWith(prefix + "cookpie")) {
-        const responses = ["burnt", "perfect", "undercooked"]
-                let toSay = Math.floor(Math.random() * responses.length)
-                if(toSay === "undercooked") {
-                    msg.reply("Your pie is cooking!").then(msg => {
-                        setTimeout(function() {
-                    msg.delete()
-                    msg.reply("Oh no! Your pie burnt!")
-
-                }, 3000)
-                    })
-                    msg.channel.send("<:cookingpie:378570967171072010>\n:fire:").then(msg => {
-                        setTimeout(function() {
-                    msg.edit("<:burntpie:378570967170940928>")
-
-                }, 3000)
-                      
-                      
-                    })
-                } else if(toSay === "perfect") {
-                    msg.reply("Your pie is cooking!").then(msg => {
-                        setTimeout(function() {
-                    msg.delete()
-                    msg.reply("Your pie was cooked to perfection! Yum!")
-
-                }, 3000)
-                    })
-                    msg.channel.send("<:cookingpie:378570967171072010>\n:fire:").then(msg => {
-                        setTimeout(function() {
-                    msg.edit("<:perfectpie:378571086436237315>")
-
-                }, 3000)
-                      
-                      
-                    })
-                } else if (toSay === "undercooked") {
-                    msg.reply("Your pie is cooking!").then(msg => {
-                        setTimeout(function() {
-                    msg.delete()
-                    msg.reply("Oh no! Your pie was undercooked!")
-
-                }, 3000)
-                    })
-                    msg.channel.send("<:cookingpie:378570967171072010>\n:fire:").then(msg => {
-                        setTimeout(function() {
-                    msg.edit("<:cookingpie:378570967171072010>")
-
-                }, 3000)
-                      
-                      
-                    })
-                }
-    }
+    
     for (var i = 0; i < rbRole.length; i++) {
         if (contains(msg.content.toLowerCase(), rbRole[i].toLowerCase())) {
             if(!msg.member.bannable) return msg.author.send(":tired_face: I can't ban you on AqilAcademy! But I'm just letting you know that YOU SHOULD NEVER PING THE HYPERTHINKS EVER. Kthxbai.")
