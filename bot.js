@@ -74,6 +74,10 @@ var said = msg.content.toLowerCase(); //declare said
                       })
                       msg.channel.send("<:cookingpie:378570967171072010>\n:fire:").then(msg => {
                           setTimeout(function() {
+                      msg.edit("<:perfectpie:378571086436237315>")
+
+                  }, 1500)
+                          setTimeout(function() {
                       msg.edit("<:burntpie:378570967170940928>")
 
                   }, 3000)
