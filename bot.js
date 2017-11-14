@@ -65,7 +65,7 @@ client.on('message', msg => {
     
 var said = msg.content.toLowerCase(); //declare said
     if (msg.content.startsWith(prefix + "cookpie")) {
-          const responses = ["burnt", "perfect", "undercooked"]
+          /*const responses = ["burnt", "perfect", "undercooked"]
                   let toSay = Math.floor(Math.random() * responses.length)
                   console.log(toSay)
                   if(toSay === 0) {
@@ -117,7 +117,8 @@ var said = msg.content.toLowerCase(); //declare said
                       setTimeout(function() {
                         msg.reply("Oh no! Your pie was undercooked!")
                       }, 3000)
-                  }
+                  }*/
+        msg.reply("Something went wrong. Please try again.")
       }
     if(msg.content.startsWith(prefix + "tag")) {
         let saidTag = said.split(" ")
