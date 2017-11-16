@@ -168,7 +168,8 @@ var said = msg.content.toLowerCase(); //declare said
                 })
             break;
             case "notifs":
-                msg.channel.send("**___PLEASE STOP POSTING MESSAGES SO MY DEVICE STOPS BEEPING!!!___**\n\nThere's an easy way to fix this! ```cs\n1. Click the server name\n2. Click the Notification Settings button\nAdjust the notification settings as you please.\n```\n", "./nonotifs.mp4")
+                msg.channel.send("**___PLEASE STOP POSTING MESSAGES SO MY DEVICE STOPS BEEPING!!!___**\n\nThere's an easy way to fix this! ```cs\n1. Click the server name\n2. Click the Notification Settings button\nAdjust the notification settings as you please.\n```\n")
+                msg.channel.sendFile("./nonotifs.mp4")
             break;
             default:
                 msg.channel.send("<:clydeDeny:361217772220448769> That tag was not found. Please check your spelling or suggest it be added by posting a comment at https://github.com/ShadowKA/AqilAcademy-bot/issues/6 or contacting Shadow.")
