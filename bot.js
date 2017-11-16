@@ -1219,6 +1219,7 @@ var said = msg.content.toLowerCase(); //declare said
         var member = msg.member;
         member.addRole(role.id, "Entered Election")
         vp.addRole(role.id, "VP")
+        msg.reply("You're entered in the election!")
     }
     if (said.startsWith(prefix + "dsq")) {
         if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
