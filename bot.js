@@ -28,23 +28,22 @@ function removePunctuation(str) {
     return r;
 }
 function contains(a, b) {
-    for (var i = 0; i < a.length; i++) {
-        if (a.slice(i, i + b.length) === b) {
-            return true;
-        }
-    }
+    if(a === b) return true;
 };
 
 var rbRole = ["<@&364725306478821388>"];
 
 var badWords = "fuck,shit,yoy,cock,dick,sex,porn,fucker,mother fucker,bitch,asshole,tit,vagina,pussy,ass".split(",");
-var goodWords = "class,cows,oyoy,glass".split(",");
 
 
 client.on('message', msg => {
-    /*if(badWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase())) && !goodWords.some(word => removePunctuation(msg.content.toLowerCase()).includes(word.toLowerCase()))) {
-            if(msg.author.id === client.user.id) return;
-            msg.delete();
+
+    for (var a = 0; a < msg.content.length; a++) {
+  for (var i = 0; i < badWords.length; i++) {
+      let splitted = msg.content.toLowerCase().split(" ")
+      if (contains(splitted[a], badWords[i].toLowerCase())) {
+          if(msg.author.id === client.user.id) return;
+          msg.delete();
             msg.reply("Please control your language! <:stop:364887308782272512>");
             let member = msg.author;
             member.send("**You've been warned in AqilAcademy:**\nPlease do not use words that go against the language filter. Thank you!\n\n_If you believe this word was filtered in error, please contact <@299150484218970113>._");
@@ -59,8 +58,10 @@ client.on('message', msg => {
                 }
             })
             client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
-            client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content)
-        }*/
+            client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content + "\n**Word:** " + splitted[a] + "for badWords " + badWords[i])
+      }
+  }
+}
     
     
 var said = msg.content.toLowerCase(); //declare said
