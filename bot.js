@@ -17,16 +17,7 @@ function clean(text) {
     else
         return text;
 }
-function removePunctuation(str) {
-    var m = '!@#$%^&*()_+-=~`.,></?"\':;}{[]\\☺☻';
-    var r = '';
-    for(var i = 0; i < str.length; i++){
-        if (m.indexOf(str[i]) === -1) {
-            r += str[i];
-        }
-    }
-    return r;
-}
+
 function contains(a, b) {
     if(a === b) return true;
 };
@@ -58,7 +49,7 @@ client.on('message', msg => {
                 }
             })
             client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
-            client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content + "\n**Word:** " + splitted[a] + "for badWords " + badWords[i])
+            client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content + "\n**Word:** " + splitted[a] + " for badWords `" + badWords[i] + "`")
       }
   }
 }
