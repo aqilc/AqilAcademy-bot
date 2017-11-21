@@ -184,7 +184,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.reply("`ERROR`\nIncorrect Permissions").then(msg => msg.delete(7000))
         }
     }
-    if (msg.content.startsWith(prefix + "requestemoji")) {
+    /*if (msg.content.startsWith(prefix + "requestemoji")) {
         let requestedEmoji = msg.attachments.first()
         if(!requestedEmoji) {
             msg.reply("You must attach the emoji you would like to request.")
@@ -197,7 +197,7 @@ var said = msg.content.toLowerCase(); //declare said
         embed.setThumbnail(requestedEmoji.url)
         client.channels.get("373956780746866688").send({ embed })
         client.channels.get("373956780746866688").send("<@&373963937026277376>")
-    }
+    }*/
     if (msg.content.startsWith(prefix + "eval")) {
         if (msg.author.id !== "299150484218970113") return msg.reply("`ERROR`\nIncorrect Permissions");
         let args = msg.content.split(" ").slice(1);
@@ -217,7 +217,7 @@ var said = msg.content.toLowerCase(); //declare said
     
     if (msg.author.bot && !client.user) return;
     
-    for (var i = 0; i < rbRole.length; i++) {
+    /*for (var i = 0; i < rbRole.length; i++) {
         if (contains(msg.content.toLowerCase(), rbRole[i].toLowerCase())) {
             if(!msg.member.bannable) return msg.author.send(":tired_face: I can't ban you on AqilAcademy! But I'm just letting you know that YOU SHOULD NEVER PING THE HYPERTHINKS EVER. Kthxbai.")
             msg.channel.send("<:blobhammer:364493777882185728> " + msg.author.tag + " has been banned for `PINGED THE HYPERTHINKS 😡`.")
@@ -233,7 +233,7 @@ var said = msg.content.toLowerCase(); //declare said
             })
             msg.member.ban("PINGED THE HYPERTHINKS 😡")
         }
-    }   
+    }*/   
     
     
     if (msg.content === prefix + "suggest party-instructions") {
@@ -257,7 +257,7 @@ var said = msg.content.toLowerCase(); //declare said
             return;
         }
     }
-    if (said.startsWith(prefix + "timeout")) {
+    /*if (said.startsWith(prefix + "timeout")) {
         let member = msg.mentions.members.first();
         let modRole = msg.guild.roles.find("name", "Moderator")
         let cp = msg.guild.roles.find("name", "Complete Power")
@@ -842,7 +842,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.delete(7000);
             msg.reply("`ERROR` You do not have the `Moderator` role.").then(msg => msg.delete(7000));
         }
-    }
+    }*/
 
 
 
@@ -867,7 +867,8 @@ var said = msg.content.toLowerCase(); //declare said
                     }
                     msg.delete(3000)
                     msg.channel.send("<:blobpolice:364194401783775252> " + member.user.username + "#" + member.user.discriminator + " has been kicked for `" + reason + "`.")
-                    client.channels.get("358352044094128128").send({
+                    if(client.channels.get("382499510401630209")) {
+                    client.channels.get("382499510401630209").send({
                         embed: {
                             color: 16711680,
                             fields: [{
@@ -877,6 +878,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                         }
                     })
+                    }
                     member.kick(reason + " - Responsible User: " + msg.author.username + "#" + msg.author.discriminator);
 
                     return;
@@ -900,7 +902,8 @@ var said = msg.content.toLowerCase(); //declare said
                         }
                         msg.delete(3000)
                         msg.channel.send("<:blobpolice:364194401783775252> " + member.user.username + "#" + member.user.discriminator + " has been kicked for `" + reason + "`.")
-                        client.channels.get("358352044094128128").send({
+                        if(client.channels.get("382499510401630209")) {
+                        client.channels.get("382499510401630209").send({
                             embed: {
                                 color: 16711680,
                                 fields: [{
@@ -910,6 +913,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                             }
                         })
+                        }
                         member.kick(reason + " - Responsible User: " + msg.author.username + "#" + msg.author.discriminator);
 
                         return;
@@ -932,7 +936,8 @@ var said = msg.content.toLowerCase(); //declare said
                         }
                         msg.delete(3000)
                         msg.channel.send("<:blobpolice:364194401783775252> " + member.user.username + "#" + member.user.discriminator + " has been kicked for `" + reason + "`.")
-                        client.channels.get("358352044094128128").send({
+                        if(client.channels.get("382499510401630209")) {
+                        client.channels.get("382499510401630209").send({
                             embed: {
                                 color: 16711680,
                                 fields: [{
@@ -942,6 +947,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                             }
                         })
+                        }
                         member.kick(reason + " - Responsible User: " + msg.author.username + "#" + msg.author.discriminator);
 
                         return;
@@ -974,7 +980,8 @@ var said = msg.content.toLowerCase(); //declare said
                     }
                     msg.delete(3000)
                     msg.channel.send("<:blobhammer:364493777882185728> " + member.user.username + "#" + member.user.discriminator + " has been banned for `" + reason + "`.")
-                    client.channels.get("358352044094128128").send({
+                    if(client.channels.get("382499510401630209")) {
+                    client.channels.get("382499510401630209").send({
                         embed: {
                             color: 16711680,
                             fields: [{
@@ -984,6 +991,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                         }
                     })
+                    }
                     member.ban(reason + " - Responsible User: " + msg.author.username + "#" + msg.author.discriminator);
 
                     return;
@@ -1007,7 +1015,8 @@ var said = msg.content.toLowerCase(); //declare said
                         }
                         msg.delete(3000)
                         msg.channel.send("<:blobhammer:364493777882185728> " + member.user.username + "#" + member.user.discriminator + " has been banned for `" + reason + "`.")
-                        client.channels.get("358352044094128128").send({
+                        if(client.channels.get("382499510401630209")) {
+                        client.channels.get("382499510401630209").send({
                             embed: {
                                 color: 16711680,
                                 fields: [{
@@ -1017,6 +1026,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                             }
                         })
+                        }
                         member.ban(reason + " - Responsible User: " + msg.author.username + "#" + msg.author.discriminator);
 
                         return;
@@ -1039,7 +1049,8 @@ var said = msg.content.toLowerCase(); //declare said
                         }
                         msg.delete(3000)
                         msg.channel.send("<:blobhammer:364493777882185728> " + member.user.username + "#" + member.user.discriminator + " has been banned for `" + reason + "`.")
-                        client.channels.get("358352044094128128").send({
+                        if(client.channels.get("382499510401630209")) {
+                        client.channels.get("382499510401630209").send({
                             embed: {
                                 color: 16711680,
                                 fields: [{
@@ -1049,6 +1060,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                             }
                         })
+                        }
                         member.ban(reason + " - Responsible User: " + msg.author.username + "#" + msg.author.discriminator);
 
                         return;
@@ -1062,7 +1074,7 @@ var said = msg.content.toLowerCase(); //declare said
     if (said.startsWith(prefix + "hello")) {
         msg.reply("Hey!");
     }
-    if (said.startsWith(prefix + "warn")) {
+    /*if (said.startsWith(prefix + "warn")) {
         let modRole = msg.guild.roles.find("name", "Moderator")
         if (msg.member.roles.has(modRole.id)) {
             let member = msg.mentions.members.first();
@@ -1095,11 +1107,11 @@ var said = msg.content.toLowerCase(); //declare said
             msg.reply("`ERROR`\nYou are not a Moderator.")
             return;
         }
-    }
+    }*/
     if (msg.content === prefix + "uptime") {
         msg.reply("I have been online for " + ms(client.uptime, { long: true }) + ".")
     }
-    if (said.startsWith(prefix + "startelection")) {
+    /*if (said.startsWith(prefix + "startelection")) {
         if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
             let params = msg.content.split(" ").slice(1);
             console.log(params)
@@ -1222,7 +1234,7 @@ var said = msg.content.toLowerCase(); //declare said
             client.channels.get("358352044094128128").send("<:clydeWarnRed:358724931107684362> **" + toDsq.user.username + "#" + toDsq.user.discriminator + " has been disqualified from the election.**")
             msg.reply(toDsq.user.username + "#" + toDsq.user.discriminator + " has been disqualified from the election.")
         }
-    }
+    }*/
     if (said === prefix + "help") {
         msg.reply("**Looking for info about Clyde? Want to know all of the commands?**\n\nHead on over to https://shadowka.gitbooks.io/clyde/content/ and you'll see info about all the different functions of Clyde.");
     }
@@ -1286,7 +1298,7 @@ var said = msg.content.toLowerCase(); //declare said
             return;
         }
     }
-    if (msg.content.startsWith(prefix + "electionreset")) {
+    /*if (msg.content.startsWith(prefix + "electionreset")) {
         if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
         let setting = said.slice(prefix.length + 14, msg.length);
         switch(setting){
@@ -1314,7 +1326,7 @@ var said = msg.content.toLowerCase(); //declare said
             return;
         }
         
-    }
+    }*/
     if (msg.content === prefix + "listemoji") {
         msg.channel.send(msg.guild.emojis.map(r => r.toString()).join("  "));
     }
@@ -1324,7 +1336,8 @@ var said = msg.content.toLowerCase(); //declare said
         let member = aqilacademy.members.get(userID)
         if(!member.kickable) return member.send(":tired_face: I can't kick you from AqilAcademy! But I'm just letting you know that you have three or more infractions and should STOP doing stuff that gives you infractions. Kthxbai");
         member.kick("Auto Kick for 3 Infractions")
-        client.channels.get("358352044094128128").send({
+        if(client.channels.get("382499510401630209")) {
+        client.channels.get("382499510401630209").send({
                             embed: {
                                 color: 16711680,
                                 fields: [{
@@ -1334,6 +1347,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                             }
                         })
+        }
     }
     /*  if(said.startsWith(prefix + "activitylog-demo")) {
         msg.reply("Take a look at <#358352044094128128>")
@@ -1358,7 +1372,7 @@ client.on('guildMemberAdd', member => {
     let pings = client.guilds.get("294115797326888961").roles.find("name", "Pings")
     member.addRole(regUser.id)
     member.addRole(pings.id)
-    client.channels.get("294115797326888961").send("<@" + member.id + "> Welcome! <:blobwave:364865411344236545>")
+    //client.channels.get("294115797326888961").send("<@" + member.id + "> Welcome! <:blobwave:364865411344236545>")
     member.send({
         embed: {
             //color: 16711680,
@@ -1369,7 +1383,7 @@ client.on('guildMemberAdd', member => {
 
         }
     })
-    client.channels.get("358352044094128128").send({
+    client.channels.get("382499510401630209").send({
         embed: {
             color: 65280,
             fields: [{
@@ -1384,7 +1398,7 @@ client.on('guildMemberAdd', member => {
 client.on('guildMemberRemove', member => {
     client.channels.get("294115797326888961").send(member.user.tag + " has left the server. <:blobsob:364864813161119764>")
     member.send("We're sorry to see you leave AqilAcademy. If you ever want to come back, here's an invite: https://discord.gg/RKESYJ6")
-    client.channels.get("358352044094128128").send({
+    client.channels.get("382499510401630209").send({
         embed: {
             color: 16711680,
             fields: [{
