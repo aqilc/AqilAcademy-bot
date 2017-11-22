@@ -38,7 +38,7 @@ client.on('message', msg => {
             msg.reply("Please control your language! <:stop:364887308782272512>");
             let member = msg.author;
             member.send("**You've been warned in AqilAcademy:**\nPlease do not use words that go against the language filter. Thank you!\n\n_If you believe this word was filtered in error, please contact <@299150484218970113>._");
-            client.channels.get("358352044094128128").send({
+            client.channels.get("382499510401630209").send({
                 embed: {
                     color: 16753920,
                     fields: [{
@@ -49,7 +49,7 @@ client.on('message', msg => {
                 }
             })
             client.channels.get("373559262095343616").send("!!infract " + msg.author.id)
-            client.channels.get("360909001346514954").send("**Filtered Message:** " + msg.content + "\n**Word:** " + splitted[a] + " for badWords `" + badWords[i] + "`")
+            client.channels.get("382937336876367872").send("**Filtered Message:** " + msg.content + "\n**Word:** " + splitted[a] + " for badWords `" + badWords[i] + "`")
       }
   }
 }
@@ -236,10 +236,10 @@ var said = msg.content.toLowerCase(); //declare said
     }*/   
     
     
-    if (msg.content === prefix + "suggest party-instructions") {
+    /*if (msg.content === prefix + "suggest party-instructions") {
         msg.delete()
         msg.channel.send(":scream: _A new channel just appeared for me! What is it???_\nThis is the place to submit your suggestions for parties in the next AqilAcademy election.\n\n**Okay, I just had this great idea for a party! How do I submit it?**\nIt's simple! Just use the `.suggestparty` command anywhere on this server. It will appear here and can be voted on by other members.\n```Example: .suggestparty The Party of ™Ness```\n**I see some great suggestions here, how do I support them?** OR **I don't like this suggestion, how do I downvote it?**\nReact with either <:upvote:361166616081203200> or <:downvote:361166591943114752>.")
-    }
+    }*/
 
     if (said.startsWith(prefix + "speak")) { //Shadow Only
         var toSpeak = msg.content.slice(prefix.length + 6, msg.length);
