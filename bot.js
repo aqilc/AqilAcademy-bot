@@ -1368,11 +1368,11 @@ client.on('warn', info => {
     client.channels.get("371766267029356565").send("`WARNING`\n```" + info + "```")
 });
 client.on('guildMemberAdd', member => {
-    let regUser = client.guilds.get("294115797326888961").roles.find("name", "Regular User")
+    let regUser = client.guilds.get("294115797326888961").roles.find("name", "Regular Person")
     let pings = client.guilds.get("294115797326888961").roles.find("name", "Pings")
     member.addRole(regUser.id)
     member.addRole(pings.id)
-    //client.channels.get("294115797326888961").send("<@" + member.id + "> Welcome! <:blobwave:364865411344236545>")
+    client.channels.get("294115797326888961").send("<@" + member.id + "> Welcome! <:blobwave:364865411344236545>")
     member.send({
         embed: {
             //color: 16711680,
