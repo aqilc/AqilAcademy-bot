@@ -77,7 +77,7 @@ var said = msg.content.toLowerCase(); //declare said
 
                       })
                       setTimeout(function() {
-                        msg.reply("Oh no! Your pie burnt!")
+                        msg.reply("Oh no! Your pie is burnt!")
                       }, 3000)
                   } else if(toSay === 1) {
                       msg.reply("Your pie is cooking!").then(msg => {
