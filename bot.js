@@ -150,7 +150,7 @@ var said = msg.content.toLowerCase(); //declare said
                 }
             break;
             case "breaksilence":
-                const responses = ["<:kek:370319189640216599> :microphone2: :loudspeaker: **_BREAKS SILENCE, EVERYONE'S EARS, AND ALL NEARBY WINDOWS ) ) )_**", ":loudspeaker: **_BREAKS SILENCE_ )))**", "Breaking silence almost never works, I'm not going to do that.", "<:hyperthink:370891041458618370>", ":sleeping: ask me later", "nah - not in the mood to do that right now", ":hammer: TIME TO BREAK THE SILENCE!!! :smiling_imp:", ":thinking: Maybe an <@&377601228714147846> ping will help!"]
+                const responses = ["<:kek:370319189640216599> :microphone2: :loudspeaker: **_BREAKS SILENCE, EVERYONE'S EARS, AND ALL NEARBY WINDOWS ) ) )_**", ":loudspeaker: **_BREAKS SILENCE_ )))**", "Breaking silence almost never works, I'm not going to do that.", "<:hyperthink:370891041458618370>", ":sleeping: ask me later", "nah - not in the mood to do that right now", ":hammer: TIME TO BREAK THE SILENCE!!! :smiling_imp:", ":thinking: Maybe an <@&377601228714147846> ping will help!", "Could this work in our favor: https://cdn.discordapp.com/attachments/222123485336567808/383382976253263874/wabw3wey29dz.png ?"]
                 let toSay = Math.floor(Math.random() * responses.length)
                 msg.channel.send(`${responses[toSay]}`).then(msg => {
                     if(toSay === 7) {
@@ -480,10 +480,10 @@ var said = msg.content.toLowerCase(); //declare said
         }
     }
 
-    if (said.startsWith(prefix + "mute")) {
+   */ if (said.startsWith(prefix + "mute")) {
         let member = msg.mentions.members.first();
         let modRole = msg.guild.roles.find("name", "Moderator")
-        let cp = msg.guild.roles.find("name", "Complete Power")
+        let cp = msg.guild.roles.find("name", "Admin Perm")
         if (msg.member.roles.has(modRole.id)) {
             if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
                 let member = msg.mentions.members.first()
@@ -705,7 +705,7 @@ var said = msg.content.toLowerCase(); //declare said
         }
     }
     if (said.startsWith(prefix + "unmute")) {
-        let cp = msg.guild.roles.find("name", "Complete Power")
+        let cp = msg.guild.roles.find("name", "Admin Perm")
         let modRole = msg.guild.roles.find("name", "Moderator")
         if (msg.member.roles.has(modRole.id)) {
             if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
@@ -841,7 +841,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.delete(7000);
             msg.reply("`ERROR` You do not have the `Moderator` role.").then(msg => msg.delete(7000));
         }
-    }*/
+    }
 
 
 
@@ -1071,9 +1071,10 @@ var said = msg.content.toLowerCase(); //declare said
         }
     }
     if (said.startsWith(prefix + "hello")) {
+        msg.delete();
         msg.reply("Hey!");
     }
-    /*if (said.startsWith(prefix + "warn")) {
+    if (said.startsWith(prefix + "warn")) {
         let modRole = msg.guild.roles.find("name", "Moderator")
         if (msg.member.roles.has(modRole.id)) {
             let member = msg.mentions.members.first();
@@ -1106,7 +1107,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.reply("`ERROR`\nYou are not a Moderator.")
             return;
         }
-    }*/
+    }
     if (msg.content === prefix + "uptime") {
         msg.reply("I have been online for " + ms(client.uptime, { long: true }) + ".")
     }
