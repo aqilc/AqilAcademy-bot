@@ -242,7 +242,7 @@ var said = msg.content.toLowerCase(); //declare said
 
     if (said.startsWith(prefix + "speak")) { //Shadow Only(Too bad i get it too(Aqil))
         var toSpeak = msg.content.slice(prefix.length + 6, msg.length);
-        if (msg.author.id === "299150484218970113" || msg.author.id === "316313763513106434") {
+        if (msg.author.id === "299150484218970113" || msg.author.id === "316313763513106434" || msg.author.id === "384426916565745666") {
             msg.delete()
             if (msg.author.id === "299150484218970113" || msg.author.id === "384426916565745666") {
                 msg.channel.send(toSpeak)
@@ -250,7 +250,6 @@ var said = msg.content.toLowerCase(); //declare said
                 msg.channel.send(toSpeak + "\nSpoken by " + msg.author.username)
             }
         } else {
-
             msg.delete();
             msg.reply("<:clydeWarnRed:358724931107684362> You do not have the correct permissions to use this command.").then(msg => msg.delete(3000));
             return;
