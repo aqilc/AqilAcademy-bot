@@ -1368,6 +1368,7 @@ client.on('warn', info => {
     client.channels.get("371766267029356565").send("`WARNING`\n```" + info + "```")
 });
 client.on('guildMemberAdd', member => {
+    if(member.guild.id !== "294115797326888961") return;
     let regUser = client.guilds.get("294115797326888961").roles.find("name", "Regular Person")
     let pings = client.guilds.get("294115797326888961").roles.find("name", "Pings")
     member.addRole(regUser.id)
@@ -1396,6 +1397,7 @@ client.on('guildMemberAdd', member => {
 
 });
 client.on('guildMemberRemove', member => {
+    if(member.guild.id !== "294115797326888961") return;
     client.channels.get("294115797326888961").send(member.user.tag + " has left the server. <:blobsob:364864813161119764>")
     member.send("We're sorry to see you leave AqilAcademy. If you ever want to come back, here's an invite: https://discord.gg/RKESYJ6")
     client.channels.get("382499510401630209").send({
