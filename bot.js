@@ -56,7 +56,7 @@ client.on('message', msg => {
     
     
 var said = msg.content.toLowerCase(); //declare said
-    if (msg.content.startsWith(prefix + "cookpie")) {
+    if (msg.content.startsWith(prefix + "cookpie") && msg.channel.id === "382504483483025410") {
           const responses = ["burnt", "perfect", "undercooked"]
                   let toSay = Math.floor(Math.random() * responses.length)
                   console.log(toSay)
@@ -240,11 +240,11 @@ var said = msg.content.toLowerCase(); //declare said
         msg.channel.send(":scream: _A new channel just appeared for me! What is it???_\nThis is the place to submit your suggestions for parties in the next AqilAcademy election.\n\n**Okay, I just had this great idea for a party! How do I submit it?**\nIt's simple! Just use the `.suggestparty` command anywhere on this server. It will appear here and can be voted on by other members.\n```Example: .suggestparty The Party of ™Ness```\n**I see some great suggestions here, how do I support them?** OR **I don't like this suggestion, how do I downvote it?**\nReact with either <:upvote:361166616081203200> or <:downvote:361166591943114752>.")
     }*/
 
-    if (said.startsWith(prefix + "speak")) { //Shadow Only
+    if (said.startsWith(prefix + "speak")) { //Shadow Only(nevez)
         var toSpeak = msg.content.slice(prefix.length + 6, msg.length);
-        if (msg.author.id === "299150484218970113" || msg.author.id === "316313763513106434") {
+        if (msg.author.id === "299150484218970113" || msg.author.id === "316313763513106434" || msg.author.id === "294115380916649986") {
             msg.delete()
-            if (msg.author.id === "299150484218970113") {
+            if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
                 msg.channel.send(toSpeak)
             } else {
                 msg.channel.send(toSpeak + "\nSpoken by " + msg.author.username)
@@ -479,7 +479,7 @@ var said = msg.content.toLowerCase(); //declare said
         }
     }
 
-   */ if (said.startsWith(prefix + "mute")) {
+   if (said.startsWith(prefix + "mute")) {
         let member = msg.mentions.members.first();
         let modRole = msg.guild.roles.find("name", "Moderator")
         let cp = msg.guild.roles.find("name", "Admin Perm")
@@ -840,7 +840,7 @@ var said = msg.content.toLowerCase(); //declare said
             msg.delete(7000);
             msg.reply("`ERROR` You do not have the `Moderator` role.").then(msg => msg.delete(7000));
         }
-    }
+    }*/
 
 
 
