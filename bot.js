@@ -242,9 +242,9 @@ var said = msg.content.toLowerCase(); //declare said
 
     if (said.startsWith(prefix + "speak")) { //Shadow Only(Not anymore)
         var toSpeak = msg.content.slice(prefix.length + 6, msg.length);
-        if (msg.author.id === "299150484218970113" || msg.author.id === "316313763513106434" || msg.author.id === "384829629807984663") {
+        if (msg.author.id === "299150484218970113" || msg.author.id === "316313763513106434" || msg.author.id === "294115380916649986") {
             msg.delete()
-            if (msg.author.id === "299150484218970113" || msg.author.id === "384829629807984663") {
+            if (msg.author.id === "299150484218970113" || msg.author.id === "294115380916649986") {
                 msg.channel.send(toSpeak)
             } else {
                 msg.channel.send(toSpeak + "\nSpoken by " + msg.author.username)
