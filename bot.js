@@ -59,7 +59,7 @@ var said = msg.content.toLowerCase(); //declare said
     if (msg.content.startsWith(prefix + "cookpie")) {
         if(msg.channel.id !== "382504483483025410") {
            msg.delete(3000)
-           msg.reply("Pies can only be cooked in <#BOTCHNLID>!").then(msg => msg.delete(3000))
+           msg.reply("Pies can only be cooked in <#382504483483025410>!").then(msg => msg.delete(3000))
            return; //RETURN IS VERY IMPORTANT
         }
           const responses = ["burnt", "perfect", "undercooked"]
